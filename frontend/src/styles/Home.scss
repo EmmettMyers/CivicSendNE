@@ -1,0 +1,54 @@
+// Home Page
+.mottoSection {
+    width: 900px;
+    color: #3E342D;
+    margin-top: 50px;
+    .motto {
+        font-size: 60px;
+        line-height: 80px;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    }
+    .description {
+        list-style-type: disc;
+        font-size: 22px;
+        margin-top: 20px;
+        margin-left: 50px;
+    }
+}
+.screenshots {
+    margin-top: 50px;
+    img {
+        width: 500px;
+        border: solid 10px #3E342D;
+        border-radius: 20px;
+    }
+}
+
+// Register Page
+.registerBox {
+    background: #F4F4F4;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    width: 700px;
+    height: 600px;
+    margin-top: 50px;
+    h1 {
+        font-size: 45px;
+        margin-top: 25px;
+        margin-left: 80px;
+        margin-bottom: 15px;
+    }
+    .residentCheck {
+        cursor: pointer;
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 90px;
+        margin-top: 15px;
+        font-size: 15px;
+        input {
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            accent-color: green;
+        }
+    }
+}

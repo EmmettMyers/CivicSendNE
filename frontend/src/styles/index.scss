@@ -1,0 +1,74 @@
+body {
+    font-family: 'Inter';
+    overflow: hidden;
+    background: #BBADA3;
+    user-select: none;
+}
+
+@mixin txt_hover($bright){
+    &:hover {
+        transition: 0.3s;
+        cursor: pointer;
+        filter: brightness($bright);
+    }
+}
+
+// Navbar Component
+.navbar {
+    background: #3E342D;
+    height: 80px;
+    .logo {
+        height: 70px;
+        margin-top: 5px;
+        margin-left: 10px;
+        @include txt_hover(70%);
+    }
+    .menu {
+        height: 44px;
+        margin-top: 18px;
+        margin-right: 20px;
+        @include txt_hover(70%);
+    }
+    .txt-holder p {
+        font-size: 30px;
+        margin-top: 18px;
+        margin-right: 35px;
+        @include txt_hover(70%);
+    }
+}
+
+// BgImage Component
+.bgImage {
+    opacity: 8%;
+    z-index: -1;
+}
+
+// GreenButton Component
+.greenBtn {
+    color: #ACCDA4;
+    background: #3E6335;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include txt_hover(120%);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+// AccountInput Component
+.accountInput {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-right: 30px;
+    label {
+        padding: 5px;
+        padding-right: 10px;
+        width: 150px;
+        text-align: right;
+    }
+    input {
+        padding: 5px;
+        padding-left: 10px;
+        width: 400px;
+        border: solid 1px black;
+    }
+}

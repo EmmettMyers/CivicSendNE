@@ -1,0 +1,80 @@
+body {
+  font-family: "Inter";
+  overflow: hidden;
+  background: #BBADA3;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.navbar {
+  background: #3E342D;
+  height: 80px;
+}
+.navbar .logo {
+  height: 70px;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+.navbar .logo:hover {
+  transition: 0.3s;
+  cursor: pointer;
+  filter: brightness(70%);
+}
+.navbar .menu {
+  height: 44px;
+  margin-top: 18px;
+  margin-right: 20px;
+}
+.navbar .menu:hover {
+  transition: 0.3s;
+  cursor: pointer;
+  filter: brightness(70%);
+}
+.navbar .txt-holder p {
+  font-size: 30px;
+  margin-top: 18px;
+  margin-right: 35px;
+}
+.navbar .txt-holder p:hover {
+  transition: 0.3s;
+  cursor: pointer;
+  filter: brightness(70%);
+}
+
+.bgImage {
+  opacity: 8%;
+  z-index: -1;
+}
+
+.greenBtn {
+  color: #ACCDA4;
+  background: #3E6335;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.greenBtn:hover {
+  transition: 0.3s;
+  cursor: pointer;
+  filter: brightness(120%);
+}
+
+.accountInput {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-right: 30px;
+}
+.accountInput label {
+  padding: 5px;
+  padding-right: 10px;
+  width: 150px;
+  text-align: right;
+}
+.accountInput input {
+  padding: 5px;
+  padding-left: 10px;
+  width: 400px;
+  border: solid 1px black;
+}/*# sourceMappingURL=index.css.map */
