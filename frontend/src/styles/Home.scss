@@ -1,7 +1,9 @@
-// Home Page
+@import 'colors';
+
+// Home Logged Out Page
 .mottoSection {
     width: 900px;
-    color: #3E342D;
+    color: $solid-brown;
     margin-top: 50px;
     .motto {
         font-size: 60px;
@@ -19,14 +21,76 @@
     margin-top: 50px;
     img {
         width: 500px;
-        border: solid 10px #3E342D;
+        border: solid 10px $solid-brown;
         border-radius: 20px;
+    }
+}
+
+// Home Logged In Page
+.morningTxt {
+    color: $dark-brown;
+    font-size: 80px;
+    margin-top: 50px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+// Login Modal 
+.modalHolder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    .overlay {
+        margin-top: 80px;
+        position: fixed;
+        bottom: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+    }      
+    .modal {
+        background: $lighter-grey;
+        width: 600px;
+        height: 300px;
+        border: 6px solid $solid-grey;
+        .loginTxt {
+            font-size: 45px;
+        }
+        .inputs {
+            margin-top: 90px;
+            margin-right: 20px;
+            .loginInput {
+                label {
+                    text-align: right;
+                    padding: 5px;
+                    width: 130px;
+                    font-size: 25px;
+                }
+                input {
+                    width: 350px;
+                    background: $light-grey;
+                    padding: 5px;
+                    padding-left: 10px;
+                    font-size: 20px;
+                }
+            }
+        }
+        .close {
+            color: $solid-grey;
+            font-size: 35px;
+            &:hover {
+                transition: 0.2s;
+                cursor: pointer;
+                filter: brightness(60%);
+            }
+        }
     }
 }
 
 // Register Page
 .registerBox {
-    background: #F4F4F4;
+    background: $lighter-grey;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     width: 700px;
     height: 600px;
@@ -48,7 +112,13 @@
             cursor: pointer;
             width: 20px;
             height: 20px;
-            accent-color: green;
+            accent-color: $solid-green;
         }
+    }
+    #error {
+        font-size: 20px;
+        margin-top: 20px;
+        margin-left: 30px;
+        width: 250px;
     }
 }

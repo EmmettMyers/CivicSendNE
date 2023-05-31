@@ -37,7 +37,7 @@ def getParsedSenatorInfo() -> list[dict[str, str]]:
 
     return allSenators
 
-def verifyLocation(userZip) -> str:
+def verifyLocation(userZip):
     # Parse content from Nebraska Zip Codes page
     url = "https://www.nebraska-demographics.com/zip_codes_by_population"
     response = requests.get(url)
@@ -51,6 +51,6 @@ def verifyLocation(userZip) -> str:
     for row in rows:
         zip = row.text
         if (userZip == zip):
-            return "True"
+            return True
 
-    return "False"
+    return False

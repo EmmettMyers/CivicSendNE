@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import '../styles/Home.css';
-import GreenButton from '../components/GreenButton';
+import Button from './Button';
 import setPage from "..";
+import { lightGreen, solidGreen } from "../styles/colors";
 
 const MottoSection: React.FC = () => {
     return (
         <div className="mottoSection">
             <p className="motto font-bold">
                 Contacting your local Nebraskan Representatives has never been
-                <i style={{color: "#3E6335"}}> easier</i>.
+                <i style={{color: solidGreen}}> easier</i>.
             </p>
             <ul className="description font-medium">
                 <li>Find Nebraskan representatives by address, city, or county</li>
@@ -17,14 +18,10 @@ const MottoSection: React.FC = () => {
                 <li>Choose from various email and letter templates</li>
                 <li>Prompt an AI Writer to create an email or letter</li>
             </ul>
-            <GreenButton 
-                onClick={() => setPage('register')} 
-                text="Get Started" 
-                width="600px" 
-                height="80px" 
-                fontSize="40px" 
-                marginTop="40px" 
-                borderRadius="20px"
+            <Button onClick={() => setPage('register')} 
+                    text="Get Started" txtColor={lightGreen} fontSize="40px" 
+                    bgColor={solidGreen} width="600px" height="80px" 
+                    marginTop="40px" borderRadius="20px" 
             />
         </div>
     );

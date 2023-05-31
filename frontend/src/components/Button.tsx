@@ -1,20 +1,25 @@
 import React, { useState, useEffect } from "react";
 import setPage from "..";
 
-interface GreenButtonProps {
+interface ButtonProps {
     onClick: () => void;
     text: string;
+    txtColor: string;
+    fontSize: string;
+    bgColor: string;
     width: string;
     height: string;
-    fontSize: string;
     marginTop: string;
     borderRadius: string;
 }
 
-const GreenButton: React.FC<GreenButtonProps> = ({ onClick, text, width, height, fontSize, marginTop, borderRadius }) => {
+const Button: React.FC<ButtonProps> = 
+({ onClick, text, txtColor, fontSize, bgColor, width, height, marginTop, borderRadius }) => {
 
     const btn_dynamic_styles = {
         width: width,
+        color: txtColor,
+        background: bgColor,
         height: height,
         fontSize: fontSize,
         marginTop: marginTop,
@@ -22,10 +27,10 @@ const GreenButton: React.FC<GreenButtonProps> = ({ onClick, text, width, height,
     };
 
     return (
-        <div onClick={onClick} style={btn_dynamic_styles} className="greenBtn font-bold">
+        <div onClick={onClick} style={btn_dynamic_styles} className="button font-bold">
             {text}
         </div>
     );
 }
 
-export default GreenButton;
+export default Button;

@@ -1,14 +1,20 @@
-let loggedIn: boolean = false;
 
-export const isLoggedIn = ():boolean => {
-  return loggedIn;
+// keeps track of user data
+
+export const getUser = () => {
+  const storedUserString = localStorage.getItem('user');
+  let storedUser;
+
+  if (storedUserString) {
+    return JSON.parse(storedUserString);
+  } else {
+    return {};
+  }
 }
 
-export const setLoggedIn = (newLoggedIn: boolean):void => {
-  loggedIn = newLoggedIn;
-}
-
-export const checkLoggedIn = ():void => {
-    // fetch loggedIn variable from mongo database (assuming db value is false here)
-    loggedIn = false;
+export const loggedIn = (): boolean => {
+  if (localStorage.getItem('sessionToken')) {
+    return true
+  } 
+  return false;
 }

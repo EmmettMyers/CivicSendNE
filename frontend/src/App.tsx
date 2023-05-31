@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { HomeLoggedIn, HomeLoggedOut } from './pages/Home';
-import { isLoggedIn } from "./authenticator";
 import Register from "./pages/Register";
+import { loggedIn } from "./authenticator";
 
 interface AppProps {
     page: string;
@@ -12,7 +12,7 @@ const App: React.FC<AppProps> = ({ page }) => {
         case 'register':
             return <Register />;
         case 'home':
-            if(isLoggedIn()){
+            if(loggedIn()){
                 return <HomeLoggedIn />
             } 
             return <HomeLoggedOut />;

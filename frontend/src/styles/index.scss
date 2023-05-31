@@ -1,7 +1,9 @@
+@import 'colors';
+
 body {
     font-family: 'Inter';
     overflow: hidden;
-    background: #BBADA3;
+    background: $tan;
     user-select: none;
 }
 
@@ -15,7 +17,7 @@ body {
 
 // Navbar Component
 .navbar {
-    background: #3E342D;
+    background: $solid-brown;
     height: 80px;
     .logo {
         height: 70px;
@@ -44,14 +46,12 @@ body {
 }
 
 // GreenButton Component
-.greenBtn {
-    color: #ACCDA4;
-    background: #3E6335;
+.button {
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     @include txt_hover(120%);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 // AccountInput Component

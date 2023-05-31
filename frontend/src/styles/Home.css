@@ -24,6 +24,64 @@
   border-radius: 20px;
 }
 
+.morningTxt {
+  color: #372E28;
+  font-size: 80px;
+  margin-top: 50px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.modalHolder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.modalHolder .overlay {
+  margin-top: 80px;
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.modalHolder .modal {
+  background: #F4F4F4;
+  width: 600px;
+  height: 300px;
+  border: 6px solid #676767;
+}
+.modalHolder .modal .loginTxt {
+  font-size: 45px;
+}
+.modalHolder .modal .inputs {
+  margin-top: 90px;
+  margin-right: 20px;
+}
+.modalHolder .modal .inputs .loginInput label {
+  text-align: right;
+  padding: 5px;
+  width: 130px;
+  font-size: 25px;
+}
+.modalHolder .modal .inputs .loginInput input {
+  width: 350px;
+  background: #B0B0B0;
+  padding: 5px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+.modalHolder .modal .close {
+  color: #676767;
+  font-size: 35px;
+}
+.modalHolder .modal .close:hover {
+  transition: 0.2s;
+  cursor: pointer;
+  filter: brightness(60%);
+}
+
 .registerBox {
   background: #F4F4F4;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -49,5 +107,11 @@
   cursor: pointer;
   width: 20px;
   height: 20px;
-  accent-color: green;
+  accent-color: #3E6335;
+}
+.registerBox #error {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-left: 30px;
+  width: 250px;
 }/*# sourceMappingURL=Home.css.map */

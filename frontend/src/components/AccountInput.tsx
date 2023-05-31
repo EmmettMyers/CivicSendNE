@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { lightGrey } from "../styles/colors";
 
 interface AccountInputProps {
     label: string;
@@ -16,7 +17,7 @@ const AccountInput: React.FC<AccountInputProps> = ({ label, onChange }) => {
             <label className="font-medium">{label}:</label>
             <input 
                 onChange={handleChange} 
-                style={{background: "#CBCBCB"}} 
+                style={{background: lightGrey}} 
                 className="rounded-md" 
                 type="text" 
                 autoComplete="off" 
