@@ -11,6 +11,14 @@ def accountExists(email):
     return account is not None
 
 def createAccount(userInfo):
+    # Set user district and recipients
+    from scraper import findUserDistrict
+    district = findUserDistrict(userInfo)
+    userInfo["district"] = district
+    from scraper import getRecipients
+    recipients = getRecipients(district)
+    userInfo["recipients"] = recipients
+
     db = client["CivicSendNE"]
     col = db["accounts"]
     insert = col.insert_one(userInfo)

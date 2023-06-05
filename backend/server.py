@@ -10,26 +10,27 @@ CORS(app)
 app.secret_key = 'd715c8522d9329ab85c58afdc0fcb4a020eeafd158efe6c1'
 
 # Retrieving senator data
-@app.route('/senatorData')
-def senatorDataRoute():
-    return jsonify(getParsedSenatorInfo())
+@app.route('/getRecipients', methods=['POST'])
+def getRecipientsRoute():
+    district = request.json['district']
+    return jsonify(getRecipients(district))
 
 # Verifying user location
 @app.route('/verifyLocation', methods=['POST'])
 def verifyLocationRoute():
-    zipCode = request.get_json()
+    zipCode = request.json['zip']
     return jsonify(verifyLocation(zipCode))
 
 # Checking if an account exists
 @app.route('/checkAccount', methods=['POST'])
 def checkAccountRoute():
-    email = request.get_json()
+    email = request.json['email']
     return jsonify(accountExists(email))
 
 # Creating an account
 @app.route('/createAccount', methods=['POST'])
 def createAccountRoute():
-    userInfo = request.get_json()
+    userInfo = request.json
     return jsonify(createAccount(userInfo))
 
 # Logging in
@@ -38,7 +39,7 @@ def loginRoute():
     loginInfo = request.json
     user = login(loginInfo)
     if(user):
-        session['email'] = loginInfo['email']
+        session['user'] = loginInfo
         session_id = str(uuid.uuid4())
         return jsonify({'message': 'Success', 'sessionToken': session_id, 'user': user}), 200
     return jsonify({'message': 'Failure'})

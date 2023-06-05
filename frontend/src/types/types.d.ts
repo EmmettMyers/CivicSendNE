@@ -8,22 +8,22 @@ interface User {
     address: Address;
 };
 
-// type for a representative
-interface Representative {
-    firstName: string;
-    lastName: string;
-    email: string;
-    district: number;
-    room: string;
-    poBox: Address;
-}
-
 // type for an address of a user
 interface Address {
     line1: string;
     city: string;
     state: string;
     zip: number;
+}
+
+// type for a representative
+interface Representative {
+    firstName: string;
+    lastName: string;
+    district: number;
+    image: string;
+    email: string;
+    room: string;
 }
 
 // type for an email

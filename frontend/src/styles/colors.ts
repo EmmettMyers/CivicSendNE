@@ -1,5 +1,5 @@
 
-// stores the colors used on the application
+// stores the colors used on the application in ts
 
 export const darkBrown = '#372E28';
 export const solidBrown = '#3E342D';
@@ -14,6 +14,6 @@ export const lightBlue = '#A9CEEE';
 
 export const solidGrey = '#676767';
 export const lightGrey = '#B0B0B0';
-export const lighterGrey = '#F4F4F4';
+export const lightestGrey = '#F4F4F4';
 
 

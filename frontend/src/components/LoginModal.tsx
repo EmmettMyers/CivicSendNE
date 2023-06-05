@@ -25,6 +25,8 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
     if (!isOpen) { return null; }
 
     const login = async () => {
+        const errorInsert = document.getElementById("error") as HTMLElement;
+        errorInsert.textContent = "";
         var userInfo = {
             email: email,
             password: password
@@ -33,16 +35,19 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
         if (response.data.message == "Success"){
             localStorage.setItem('sessionToken', response.data.sessionToken);
             localStorage.setItem('user', JSON.stringify(response.data.user));
+            closeModal();
             setPage('home');
+        } else {
+            errorInsert.textContent = "Failed to login. Invalid email or password.";
         }
     };
 
     return (
         <div className="modalHolder">
-            <div className="overlay" onClick={closeModal} />
-            <div className="modal z-20 rounded-md absolute">
+            <div className="overlay z-10" onClick={closeModal} />
+            <div className="modal z-20 rounded-xl absolute">
                 <div className="modal-content">
-                    <h1 className="loginTxt absolute left-7 top-3 font-extrabold">Log In</h1>
+                    <h1 className="loginTxt absolute left-9 top-4 font-bold">Log In</h1>
                     <p className="close absolute right-5 top-3 font-bold" onClick={closeModal}>X</p>
                     <div className="inputs">
                         <div className="loginInput flex justify-center">
@@ -54,15 +59,15 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
                             <input onChange={handlePasswordChange} id="password" className="rounded-md" type="text" autoComplete="off"/>
                         </div>
                     </div>
-                    <div>
-
-                    </div>
-                    <div className="flex justify-end" style={{marginRight: "55px"}}>
-                        <Button onClick={() => login()} 
+                    <div className="flex justify-between">
+                        <p id="error" className="text-red-700 font-semibold"></p>
+                        <div style={{marginRight: "55px"}}>
+                            <Button onClick={() => login()} 
                                 text="Log In" txtColor={lightGreen} fontSize="20px" 
                                 bgColor={solidGreen} width="150px" height="40px" 
                                 marginTop="20px" borderRadius="8px"  
-                        />
+                            />
+                        </div>
                     </div>
                 </div>
             </div>

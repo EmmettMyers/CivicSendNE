@@ -1,10 +1,8 @@
 
-// keeps track of user data
+// keeps track of session user data
 
 export const getUser = () => {
   const storedUserString = localStorage.getItem('user');
-  let storedUser;
-
   if (storedUserString) {
     return JSON.parse(storedUserString);
   } else {

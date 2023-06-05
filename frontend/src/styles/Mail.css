@@ -1,0 +1,114 @@
+.mailSetup .setupTitle {
+  color: #3E342D;
+  font-size: 60px;
+  margin-top: 20px;
+}
+.mailSetup .boxesContainer {
+  margin-top: 20px;
+}
+.mailSetup .boxesContainer .title {
+  color: #3E342D;
+  font-size: 40px;
+  padding-top: 15px;
+  padding-left: 30px;
+  padding-bottom: 15px;
+}
+.mailSetup .boxesContainer .recipientsContainer {
+  width: 800px;
+  height: 550px;
+  background: #F4F4F4;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  overflow-y: scroll;
+}
+.mailSetup .boxesContainer .recipientsContainer .recipientBox {
+  width: 220px;
+  height: 310px;
+  margin-bottom: 20px;
+  background: #B0B0B0;
+  overflow: hidden;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+}
+.mailSetup .boxesContainer .recipientsContainer .recipientBox:hover {
+  cursor: pointer;
+  transition: 0.2s;
+  border: 10px solid goldenrod !important;
+}
+.mailSetup .boxesContainer .recipientsContainer .recipientBox .topTxt {
+  font-size: 20px;
+  z-index: 10;
+  background: #B0B0B0;
+  padding: 5px;
+  padding-top: 7px;
+  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.2);
+}
+.mailSetup .boxesContainer .recipientsContainer .recipientBox .bottomTxt {
+  font-size: 15px;
+  z-index: 10;
+  background: #B0B0B0;
+  padding: 5px;
+  box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.2);
+}
+.mailSetup .boxesContainer .optionsContainer {
+  width: 500px;
+  height: 450px;
+  background: #F4F4F4;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.mailSetup .boxesContainer .optionsContainer .optionBtn {
+  font-size: 30px;
+  background: #655C56;
+  width: 420px;
+  height: 90px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.mailSetup .boxesContainer .optionsContainer .optionBtn:hover {
+  cursor: pointer;
+  transition: 0.2s;
+  border: 10px solid goldenrod !important;
+}
+
+.emailEditor .title {
+  color: #3E342D;
+  font-size: 40px;
+  margin-top: 15px;
+  padding-bottom: 10px;
+}
+.emailEditor .inputHolder {
+  margin-right: 70px;
+}
+.emailEditor .inputHolder label {
+  font-size: 20px;
+  padding-right: 15px;
+  width: 120px;
+}
+.emailEditor .inputHolder input {
+  width: 600px;
+  font-size: 15px;
+  padding-left: 10px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  background: white;
+}
+.emailEditor .body {
+  width: 1400px;
+  height: 520px;
+  background: white;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  font-size: 20px;
+  resize: none;
+}
+.emailEditor .infoTxt {
+  margin-top: 10px;
+  margin-left: 155px;
+  font-size: 17px;
+  color: #3E342D;
+}
+.emailEditor .infoTxt span {
+  font-size: 20px;
+  font-weight: bold;
+  color: #15803d;
+}/*# sourceMappingURL=Mail.css.map */

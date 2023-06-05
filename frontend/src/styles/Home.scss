@@ -26,14 +26,6 @@
     }
 }
 
-// Home Logged In Page
-.morningTxt {
-    color: $dark-brown;
-    font-size: 80px;
-    margin-top: 50px;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
-}
-
 // Login Modal 
 .modalHolder {
     display: flex;
@@ -41,27 +33,27 @@
     align-items: center;
     height: 100vh;
     .overlay {
-        margin-top: 80px;
         position: fixed;
         bottom: 0;
         top: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.7);
+        background-color: rgba(0, 0, 0, 0.8);
     }      
     .modal {
-        background: $lighter-grey;
+        background: $lightest-grey;
         width: 600px;
         height: 300px;
-        border: 6px solid $solid-grey;
         .loginTxt {
+            color: $solid-brown;
             font-size: 45px;
         }
         .inputs {
-            margin-top: 90px;
+            margin-top: 95px;
             margin-right: 20px;
             .loginInput {
                 label {
+                    color: $solid-brown;
                     text-align: right;
                     padding: 5px;
                     width: 130px;
@@ -73,29 +65,45 @@
                     padding: 5px;
                     padding-left: 10px;
                     font-size: 20px;
+                    border: solid 1.5px $solid-brown;;
                 }
             }
         }
+        #error {
+            font-size: 20px;
+            margin-top: 15px;
+            margin-left: 20px;
+            width: 250px;
+        }
         .close {
-            color: $solid-grey;
+            color: $solid-brown;
             font-size: 35px;
             &:hover {
                 transition: 0.2s;
                 cursor: pointer;
-                filter: brightness(60%);
+                filter: opacity(80%);
             }
         }
     }
 }
 
+// Home Logged In Page
+.morningTxt {
+    color: $solid-brown;
+    font-size: 80px;
+    margin-top: 50px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
 // Register Page
 .registerBox {
-    background: $lighter-grey;
+    background: $lightest-grey;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     width: 700px;
     height: 600px;
     margin-top: 50px;
     h1 {
+        color: $solid-brown;
         font-size: 45px;
         margin-top: 25px;
         margin-left: 80px;
@@ -108,6 +116,7 @@
         margin-right: 90px;
         margin-top: 15px;
         font-size: 15px;
+        color: $solid-brown;
         input {
             cursor: pointer;
             width: 20px;

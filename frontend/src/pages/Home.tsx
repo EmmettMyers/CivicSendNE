@@ -11,7 +11,6 @@ import { getUser } from "../authenticator";
 export const HomeLoggedOut: React.FC = () => {
   return (
     <div className="w-screen h-screen">
-      <NavBar />
       <div className="flex justify-center">
         <MottoSection />
         {/* two right side images */}
@@ -26,18 +25,16 @@ export const HomeLoggedOut: React.FC = () => {
 }
 
 export const HomeLoggedIn: React.FC = () => {
-
   const [firstName, setFirstName] = useState("");
   const [greeting, setGreeting] = useState("");
   const [bgSrc, setBgSrc] = useState("");
 
   useEffect(() => {
-    // localStorage.setItem('sessionToken', ''); localStorage.setItem('user', '');
+    //localStorage.setItem('sessionToken', ''); localStorage.setItem('user', '');
     // Admin Logout ^
 
     // set name
-    var user = getUser();
-    setFirstName(user['firstName']);
+    setFirstName(getUser().firstName);
     // set greeting and background by current time
     var today = new Date();
     if (today.getHours() < 12){
@@ -54,20 +51,19 @@ export const HomeLoggedIn: React.FC = () => {
 
   return (
     <div className="w-screen h-screen">
-      <NavBar />
       <div>
         <div className="flex justify-center">
           <i className="morningTxt font-bold">{greeting}, {firstName}!</i>
         </div>
         <div className="flex justify-center">
-          <Button onClick={() => setPage('home')} 
+          <Button onClick={() => setPage('emailSetup')} 
                   text="Send Email" txtColor={lightGreen} fontSize="45px"
                   bgColor={solidGreen} width="700px" height="135px" 
                   marginTop="30px" borderRadius="10px"  
           />
         </div>
         <div className="flex justify-center">
-          <Button onClick={() => setPage('home')} 
+          <Button onClick={() => setPage('letterSetup')} 
                   text="Download Letter" txtColor={lightGreen} fontSize="45px"
                   bgColor={solidGreen} width="700px" height="135px" 
                   marginTop="30px" borderRadius="10px"  
