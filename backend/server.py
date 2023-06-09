@@ -3,6 +3,7 @@ from flask_cors import CORS
 import uuid
 from scraper import *
 from accounts import *
+from mail import *
 
 # Initializing flask app
 app = Flask(__name__)
@@ -43,6 +44,30 @@ def loginRoute():
         session_id = str(uuid.uuid4())
         return jsonify({'message': 'Success', 'sessionToken': session_id, 'user': user}), 200
     return jsonify({'message': 'Failure'})
+
+# Save email
+@app.route('/saveEmail', methods=['POST'])
+def saveEmailRoute():
+    emailInfo = request.json
+    return jsonify(saveEmail(emailInfo))
+
+# Save letter
+@app.route('/saveLetter', methods=['POST'])
+def saveLetterRoute():
+    letterInfo = request.json
+    return jsonify(saveLetter(letterInfo))
+
+# Download letter
+@app.route('/downloadLetter', methods=['POST'])
+def downloadLetterRoute():
+    letterHTML = request.json['letterHTML']
+    return jsonify(downloadLetter(letterHTML))
+
+# Download letter
+@app.route('/getLetters', methods=['POST'])
+def getLettersRoute():
+    email = request.json['email']
+    return jsonify(getLetters(email))
 
 # Running app
 if __name__ == '__main__':

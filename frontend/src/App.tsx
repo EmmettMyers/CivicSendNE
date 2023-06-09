@@ -3,8 +3,11 @@ import { HomeLoggedIn, HomeLoggedOut } from './pages/Home';
 import Register from "./pages/Register";
 import { loggedIn } from "./authenticator";
 import Navbar from "./components/Navbar";
-import EmailSetup from "./pages/MailSetup";
 import EmailEditor from "./pages/EmailEditor";
+import MailComplete from "./pages/MailComplete";
+import LetterEditor from "./pages/LetterEditor";
+import MailSetup from "./pages/MailSetup";
+import DownloadedLetters from "./pages/DownloadedLetters";
 
 interface AppProps {
     page: string;
@@ -15,34 +18,43 @@ const App: React.FC<AppProps> = ({ page }) => {
     let navHighlight = "";
 
     switch (page) {
+        case 'downloadedLetters':
+            pageComponent = <DownloadedLetters />;
+            break;
+        case 'letterSent':
+            pageComponent = <MailComplete mailType="letter" />;
+            navHighlight = "letter";
+            break;
+        case 'emailSent':
+            pageComponent = <MailComplete mailType="email" />;
+            navHighlight = "email";
+            break;
+        case 'letterEditor':
+            pageComponent = <LetterEditor />;
+            navHighlight = "letter";
+            break;
         case 'emailEditor':
             pageComponent = <EmailEditor />;
             navHighlight = "email";
             break;
-        case 'letterEditor':
-            pageComponent = <EmailSetup mailType="letter" />;
-            navHighlight = "letter";
-            break;
         case 'letterSetup':
-            pageComponent = <EmailSetup mailType="letter" />;
+            pageComponent = <MailSetup mailType="letter" />;
             navHighlight = "letter";
             break;
         case 'emailSetup':
-            pageComponent = <EmailSetup mailType="email" />;
+            pageComponent = <MailSetup mailType="email" />;
             navHighlight = "email";
             break;
         case 'register':
             pageComponent = <Register />;
             break;
-        case 'home':
+        default:
             if (loggedIn()){
                 pageComponent = <HomeLoggedIn />
                 navHighlight = "home";
             } else {
                 pageComponent = <HomeLoggedOut />;
             }
-            break;
-        default:
             break;
     }
 

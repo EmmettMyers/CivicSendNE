@@ -76,7 +76,7 @@ export const HomeLoggedIn: React.FC = () => {
                   marginTop="30px" borderRadius="10px"  
           />
           <div style={{width: "15px"}}></div>
-          <Button onClick={() => setPage('home')} 
+          <Button onClick={() => setPage('downloadedLetters')} 
                   text="Letters Downloaded" txtColor={lightBlue} fontSize="25px"
                   bgColor={solidBlue} width="300px" height="100px" 
                   marginTop="30px" borderRadius="10px"  

@@ -18,7 +18,10 @@ def createAccount(userInfo):
     from scraper import getRecipients
     recipients = getRecipients(district)
     userInfo["recipients"] = recipients
-
+    from scraper import findUserRepresentative
+    representative = findUserRepresentative(userInfo)
+    userInfo["representative"] = representative
+    # Send database user info
     db = client["CivicSendNE"]
     col = db["accounts"]
     insert = col.insert_one(userInfo)

@@ -7,6 +7,7 @@ import { lightGreen, solidGreen } from "../styles/colors";
 import ContentEditable from "react-contenteditable";
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 import { getUser } from "../authenticator";
+import axios from "axios";
 
 const serviceID = 'service_trk8vgd';
 const templateID = 'template_z9jnier';
@@ -23,37 +24,29 @@ const EmailEditor: React.FC = () => {
     const handleSubjectChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSubject(event.target.value);
     };
-    const handleBodyChange = (event: any) => {
-        // get new body
-        var updatedBody = event.target.value;
-        // check if there are any values that need to be highlighted
-        var fn = "{{firstName}}";
-        var ln = "{{lastName}}";
-        var dn = "{{districtNumber}}";
-        var endings = [" ", ".", ","];
-        for (var i = 0; i < updatedBody.length; i++){
-            for (var e = 0; e < endings.length; e++){
-                var addition = '<span class="text-green-600 font-bold">';
-                var end = "";
-                if (updatedBody.substring(i, i + fn.length + 1) === fn + endings[e]){
-                    end = fn + '</span>' + endings[e];
-                } else if (updatedBody.substring(i, i + ln.length + 1) === ln + endings[e]){
-                    end = ln + '</span>' + endings[e];
-                } else if (updatedBody.substring(i, i + dn.length + 1) === dn + endings[e]){
-                    end = dn + '</span>' + endings[e];
-                }
-                if (end.length > 0){
-                    if (e == 0){
-                        end = end.substring(0, end.length - 1) + "&nbsp";
-                    }
-                    addition += end;
-                    updatedBody = updatedBody.substring(0, i) + addition + updatedBody.substring(i + addition.length);
-                }
-            }
-        }
-        // set the new body with the highlighting
-        setBody(updatedBody);
+
+    const highlightPlaceholders = (body: string) => {
+        const placeholders = ["{{firstName}}", "{{lastName}}", "{{districtNumber}}"];
+        const endings = [" ", ".", ","];
+        let highlightedBody = body;
+        placeholders.forEach((placeholder) => {
+            endings.forEach((ending) => {
+            const regex = new RegExp(`${placeholder}\\${ending}`, "g");
+            highlightedBody = highlightedBody.replace(
+                regex,
+                `<span class="text-green-600 font-bold">${placeholder}</span>${ending}`
+            );
+            });
+        });
+        return highlightedBody;
     };
+    
+    const handleBodyChange = (event: any) => {
+        const updatedBody = event.target.value;
+        const highlightedBody = highlightPlaceholders(updatedBody);
+        setBody(highlightedBody);
+    };
+      
 
     const handleKeyPress = (event: any) => {
         if (event.key === 'Enter') {
@@ -61,13 +54,16 @@ const EmailEditor: React.FC = () => {
         }
     };
 
-    const sendEmail = () => {
+    const sendEmail = async () => {
+        setPage('emailSent');
         // loop through senators, send email to each one
         for (const senator of senatorsList) {
+            // remove spans
             var setBody = body.replace(/<span[^>]*>(.*?)<\/span>/gi, "$1");
             setBody = setBody.replace(/{{firstName}}/g, senator.firstName);
             setBody = setBody.replace(/{{lastName}}/g, senator.lastName);
             setBody = setBody.replace(/{{districtNumber}}/g, senator.district.toString());
+            // send email
             const templateParams = {
                 name: getUser().firstName + " " + getUser().lastName,
                 subject: subject,
@@ -76,10 +72,22 @@ const EmailEditor: React.FC = () => {
             };
             emailjs.send(serviceID, templateID, templateParams, userID);
         }
+        // save email
+        var saveInfo: Email = {
+            sender: getUser(),
+            recipients: concatenatedNames,
+            subject: subject,
+            content: body
+        }
+        const response = await axios.post('/saveEmail', saveInfo);
     }
 
+    useEffect(() => {
+        setBody(highlightPlaceholders("Dear {{firstName}} {{lastName}},&nbsp;"));
+    }, []);
+
     return (
-        <div className="emailEditor w-screen h-screen">
+        <div className="mailEditor w-screen h-screen">
             <div className="flex justify-center">
                 <img src="./assets/backArrow.png" className="exit absolute" onClick={() => setPage('emailSetup')} />
                 <i className="title font-bold">Create and send your email!</i>
@@ -96,7 +104,7 @@ const EmailEditor: React.FC = () => {
                     html={body}
                     onChange={handleBodyChange}
                     onKeyDown={handleKeyPress}
-                    className="body rounded-md text-black" 
+                    className="body emailH rounded-md text-black" 
                 />
             </div>
             <div className="flex justify-between" style={{marginRight: "152px"}}>

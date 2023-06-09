@@ -29,7 +29,7 @@ interface Representative {
 // type for an email
 interface Email {
     sender: User;
-    recipients: Representative[];
+    recipients: string;
     subject: string;
     content: string;
 }
@@ -37,7 +37,6 @@ interface Email {
 // type for a letter
 interface Letter {
     sender: User;
-    recipients: Representative[];
+    recipients: string;
     content: string;
-    date: string;
 }

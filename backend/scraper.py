@@ -1,4 +1,5 @@
 import requests
+import re
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -45,6 +46,25 @@ def getRecipients(userDistrict) -> list[dict[str, str]]:
     # Sort the senators array by districts closest to the user district
     sorted_senators = sorted(allSenators, key=lambda x: abs(x['district'] - userDistrict))
     return sorted_senators
+
+def findUserRepresentative(userInfo):
+    # Parse content from US House of Representatives find your representative
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--disable-gpu")
+    driver = webdriver.Chrome(options=chrome_options)
+    driver.get('https://www.house.gov/representatives/find-your-representative')
+    inputZip = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'Find_Rep_by_Zipcode')))
+    inputZip.send_keys(userInfo["address"]["zip"])
+    button = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'submit')))
+    button.click()
+    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'RepInfo')))
+    repDiv = driver.find_element(By.ID, 'RepInfo')
+    repP = repDiv.find_element(By.TAG_NAME, 'p')
+    repName = repP.find_element(By.TAG_NAME, 'a').text
+    pattern = r"\([^()]*\)"
+    cleaned_text = re.sub(pattern, "", repName)
+    return cleaned_text
 
 def findUserDistrict(userInfo):
     # Parse content from Nebraska Legislature find user district

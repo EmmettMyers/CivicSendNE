@@ -90,38 +90,37 @@ const Register: React.FC = () => {
 
     return (
         <div className="w-screen h-screen">
-            { showLoader ?
-                <ProgressBar /> :
-                <>
-                    <img src="./assets/backArrow.png" className="exit absolute" onClick={() => setPage('home')} />
-                    <div className="flex justify-center">
-                        <div className="registerBox rounded-xl">
-                            <h1 className="font-bold">Create an Account</h1>
-                            <AccountInput onChange={setFirstName} label="First Name" />
-                            <AccountInput onChange={setLastName} label="Last Name" />
-                            <AccountInput onChange={setEmail} label="Email" />
-                            <AccountInput onChange={setPassword} label="Password" />
-                            <AccountInput onChange={setAddress} label="Address" />
-                            <AccountInput onChange={setCity} label="City" />
-                            <AccountInput onChange={setZip} label="ZIP Code" />
-                            <label className="residentCheck flex items-center font-medium">
-                                <input id="neCheckbox" type="checkbox" className="form-checkbox mr-2" />
-                                <span>I am a resident of the state of Nebraska.</span>
-                            </label>
-                            <div className="flex justify-between">
-                                <p id="error" className="text-red-700 font-semibold"></p>
-                                <div style={{marginRight: "90px"}}>
-                                    <Button onClick={() => createAccount()} 
-                                            text="Submit" txtColor={lightGreen} fontSize="25px" 
-                                            bgColor={solidGreen} width="250px" height="50px" 
-                                            marginTop="20px" borderRadius="10px"  
-                                    />
-                                </div>
+            { showLoader ? <ProgressBar /> :
+            <>
+                <img src="./assets/backArrow.png" className="exit absolute" onClick={() => setPage('home')} />
+                <div className="flex justify-center">
+                    <div className="registerBox rounded-xl">
+                        <h1 className="font-bold">Create an Account</h1>
+                        <AccountInput onChange={setFirstName} label="First Name" />
+                        <AccountInput onChange={setLastName} label="Last Name" />
+                        <AccountInput onChange={setEmail} label="Email" />
+                        <AccountInput onChange={setPassword} label="Password" />
+                        <AccountInput onChange={setAddress} label="Address" />
+                        <AccountInput onChange={setCity} label="City" />
+                        <AccountInput onChange={setZip} label="ZIP Code" />
+                        <label className="residentCheck flex items-center font-medium">
+                            <input id="neCheckbox" type="checkbox" className="form-checkbox mr-2" />
+                            <span>I am a resident of the state of Nebraska.</span>
+                        </label>
+                        <div className="flex justify-between">
+                            <p id="error" className="text-red-700 font-semibold"></p>
+                            <div style={{marginRight: "90px"}}>
+                                <Button onClick={() => createAccount()} 
+                                        text="Submit" txtColor={lightGreen} fontSize="25px" 
+                                        bgColor={solidGreen} width="250px" height="50px" 
+                                        marginTop="20px" borderRadius="10px"  
+                                />
                             </div>
                         </div>
                     </div>
-                    <BgImage opacity={.08} src="./assets/neSenate2.jpg" />
-                </>
+                </div>
+                <BgImage opacity={.08} src="./assets/neSenate2.jpg" />
+            </>
             }
         </div>
     );

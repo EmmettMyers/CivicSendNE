@@ -1,3 +1,7 @@
+.inter {
+  font-family: "Inter";
+}
+
 .mailSetup .setupTitle {
   color: #3E342D;
   font-size: 60px;
@@ -14,14 +18,14 @@
   padding-bottom: 15px;
 }
 .mailSetup .boxesContainer .recipientsContainer {
-  width: 800px;
+  width: 950px;
   height: 550px;
   background: #F4F4F4;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   overflow-y: scroll;
 }
 .mailSetup .boxesContainer .recipientsContainer .recipientBox {
-  width: 220px;
+  width: 200px;
   height: 310px;
   margin-bottom: 20px;
   background: #B0B0B0;
@@ -43,6 +47,7 @@
 }
 .mailSetup .boxesContainer .recipientsContainer .recipientBox .bottomTxt {
   font-size: 15px;
+  line-height: 20px;
   z-index: 10;
   background: #B0B0B0;
   padding: 5px;
@@ -71,44 +76,127 @@
   border: 10px solid goldenrod !important;
 }
 
-.emailEditor .title {
+.mailEditor .spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding-bottom: 150px;
+}
+.mailEditor .title {
   color: #3E342D;
   font-size: 40px;
   margin-top: 15px;
   padding-bottom: 10px;
 }
-.emailEditor .inputHolder {
+.mailEditor .inputHolder {
   margin-right: 70px;
 }
-.emailEditor .inputHolder label {
+.mailEditor .inputHolder label {
   font-size: 20px;
   padding-right: 15px;
   width: 120px;
 }
-.emailEditor .inputHolder input {
+.mailEditor .inputHolder input {
   width: 600px;
   font-size: 15px;
   padding-left: 10px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
   background: white;
 }
-.emailEditor .body {
+.mailEditor .body {
   width: 1400px;
-  height: 520px;
   background: white;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   padding: 15px;
   font-size: 20px;
   resize: none;
+  overflow-y: scroll;
 }
-.emailEditor .infoTxt {
+.mailEditor .letterH {
+  font-family: "Times New Roman", Times, serif;
+  height: 545px;
+}
+.mailEditor .emailH {
+  height: 520px;
+}
+.mailEditor .infoTxt {
   margin-top: 10px;
   margin-left: 155px;
   font-size: 17px;
   color: #3E342D;
 }
-.emailEditor .infoTxt span {
+.mailEditor .infoTxt span {
   font-size: 20px;
   font-weight: bold;
   color: #15803d;
+}
+.mailEditor .infoTxt2 {
+  margin-left: 155px;
+  font-size: 17px;
+  color: #3E342D;
+}
+.mailEditor .infoTxt2 span {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1d4ed8;
+}
+
+.mailComplete .sentTxt {
+  color: #3E342D;
+  font-size: 70px;
+  margin-top: 110px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.downloadedLetters .title {
+  color: #3E342D;
+  font-size: 70px;
+  margin-top: 10px;
+}
+.downloadedLetters .minimizedLetters {
+  width: 750px;
+  height: 550px;
+  background: #F4F4F4;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  overflow-y: scroll;
+  border: 2px solid #3E342D;
+}
+.downloadedLetters .bigLetter {
+  width: 850px;
+  height: 550px;
+  background: #F4F4F4;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  overflow-y: scroll;
+  border: 2px solid #3E342D;
+}
+.downloadedLetters .bigLetter .letterHolder {
+  margin-top: 15px;
+  margin-left: 25px;
+  font-size: 20px;
+  font-family: "Times New Roman", Times, serif;
+}
+.downloadedLetters .txtHolder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.downloadedLetters .txtHolder i {
+  color: #676767;
+  font-size: 25px;
+  margin-bottom: 40px;
+}
+
+.letterMin {
+  height: 70px;
+  border-bottom: 2px solid #3E342D;
+  font-size: 20px;
+  padding-top: 5px;
+  padding-left: 10px;
+}
+.letterMin:hover {
+  cursor: pointer;
+  transition: 0.2s;
+  background: gold !important;
 }/*# sourceMappingURL=Mail.css.map */

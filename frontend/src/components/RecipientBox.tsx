@@ -29,12 +29,28 @@ const RecipientBox: React.FC<RecipientBoxProps> = ({ senator, special }) => {
             case "yourSenator":
                 setBottomText(
                     <i className="font-medium">
-                        <span className="font-black">Your Senator </span>
-                     - District {senator.district}</i>
+                        <span className="font-black">Your District Senator </span>
+                        <br/>District {senator.district}</i>
+                ); break; 
+            case "yourRep":
+                setBottomText(
+                    <i className="font-medium">
+                        <span className="font-black">Your Representative </span>
+                        <br/> District {senator.district}</i>
+                ); break; 
+            case "rep":
+                setBottomText(
+                    <i className="font-medium">Representative<br/>District {senator.district}</i>
+                ); break; 
+            case "stateSen":
+                setBottomText(
+                    <i className="font-medium">
+                        <span className="font-black">Your State Senator </span>
+                        <br/>Nebraska</i>
                 ); break; 
             default: 
                 setBottomText(
-                    <i className="font-medium">Senator - District {senator.district}</i>
+                    <i className="font-medium">Senator<br/>District {senator.district}</i>
                 ); break;
         }
     }, []);

@@ -26,13 +26,13 @@ const NavBar: React.FC<NavbarProps> = ({ highlight }) => {
         letterRef.current?.style.setProperty('color', 'white');
         switch(highlight){
             case "home":
-                homeRef.current?.style.setProperty('color', 'yellow');
+                homeRef.current?.style.setProperty('color', 'gold');
                 break;
             case "email":
-                emailRef.current?.style.setProperty('color', 'yellow');
+                emailRef.current?.style.setProperty('color', 'gold');
                 break;
             case "letter":
-                letterRef.current?.style.setProperty('color', 'yellow');
+                letterRef.current?.style.setProperty('color', 'gold');
                 break;
         }
     });

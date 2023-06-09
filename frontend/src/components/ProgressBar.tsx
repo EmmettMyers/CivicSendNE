@@ -18,7 +18,7 @@ const ProgressBar: React.FC = () => {
                 <div className="outerContainer">
                 <div
                     className="innerBar"
-                    style={{ width: `${width}%`, transition: 'width 21s linear' }}
+                    style={{ width: `${width}%`, transition: 'width 24s linear' }}
                 ></div>
             </div>
             <BgImage opacity={.3} src="./assets/neScenery.jpg" />
