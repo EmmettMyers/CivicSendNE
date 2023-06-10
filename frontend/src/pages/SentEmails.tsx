@@ -1,33 +1,33 @@
 import React, { useState, useEffect, useRef } from "react";
 import '../styles/Mail.css';
 import setPage from "..";
-import LetterMinimized from "../components/LetterMinimized";
+import EmailMinimized from "../components/EmailMinimized";
 import { getUser } from "../authenticator";
 import axios from "axios";
-import { solidBrown } from "../styles/colors";
 import { Oval } from "react-loader-spinner";
+import { solidBrown } from "../styles/colors";
 
-const DownloadedLetters: React.FC = () => {
+const SentEmails: React.FC = () => {
     const [showSpinner, setShowSpinner] = useState(true);
-    const [letters, setLetters] = useState<Letter[]>([]);
-    const [noLetters, setNoLetters] = useState<boolean>(false);
-    const [expandedLetter, setExpandedLetter] = useState<Letter>();
+    const [emails, setEmails] = useState<Email[]>([]);
+    const [noEmails, setNoEmails] = useState<boolean>(false);
+    const [expandedEmail, setExpandedEmail] = useState<Email>();
 
-    const expandLetter = (letter: Letter) => {
-        if (expandedLetter == letter){
-            setExpandedLetter(undefined);
+    const expandEmail = (email: Email) => {
+        if (expandedEmail == email){
+            setExpandedEmail(undefined);
         } else {
-            setExpandedLetter(letter);
+            setExpandedEmail(email);
         }
     }
 
     useEffect(() => {
         setShowSpinner(true);
         const fetchData = async () => {
-            const response = await axios.post('/getLetters', { email: getUser().email });
-            setLetters(response.data);
+            const response = await axios.post('/getEmails', { email: getUser().email });
+            setEmails(response.data);
             if (response.data == 0){
-                setNoLetters(true);
+                setNoEmails(true);
             }
         }
         fetchData();
@@ -40,13 +40,13 @@ const DownloadedLetters: React.FC = () => {
         <div className="savedMail w-screen h-screen">
             <div className="flex justify-center mt-2">
                 <img src="./assets/backArrow.png" className="exit absolute" onClick={() => setPage('home')} />
-                <i className="title font-bold">Downloaded Letters</i>
+                <i className="title font-bold">Sent Emails</i>
             </div>
             <div className="flex justify-center mt-2">
                 <div className="minimizedMail">
-                    {noLetters ? 
+                    {noEmails ? 
                         <div className="txtHolder">
-                            <i>You have no downloaded letters.</i>
+                            <i>You have no sent emails.</i>
                         </div>
                     :
                         <>
@@ -65,11 +65,11 @@ const DownloadedLetters: React.FC = () => {
                                 </div>
                             :
                                 <>
-                                    {letters.map((letter: Letter) => (
-                                        <LetterMinimized 
-                                            letterInfo={letter} 
-                                            onClick={() => expandLetter(letter)} 
-                                            expanded={expandedLetter === letter}/>
+                                    {emails.map((email: Email) => (
+                                        <EmailMinimized 
+                                            emailInfo={email} 
+                                            onClick={() => expandEmail(email)} 
+                                            expanded={expandedEmail === email}/>
                                     ))}
                                 </>
                             }
@@ -77,11 +77,11 @@ const DownloadedLetters: React.FC = () => {
                     }
                 </div>
                 <div className="bigMail ml-4">
-                    {expandedLetter ?
-                        <div className="mailHolder" dangerouslySetInnerHTML={{ __html: "<div>" + expandedLetter.content + "</div>" }} />
+                    {expandedEmail ?
+                        <div className="mailHolder inter" dangerouslySetInnerHTML={{ __html: "<div>" + expandedEmail.content + "</div>" }} />
                     :
                         <div className="txtHolder">
-                            <i>[ Click a letter from the left, it will appear here! ]</i>
+                            <i>[ Click an email from the left, it will appear here! ]</i>
                         </div>
                     }
                 </div>
@@ -90,4 +90,4 @@ const DownloadedLetters: React.FC = () => {
     );
 }
 
-export default DownloadedLetters;
+export default SentEmails;

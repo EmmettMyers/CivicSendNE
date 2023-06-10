@@ -93,6 +93,6 @@ def verifyLocation(userZip):
     # Check if the user's zip is included in the zips
     for row in rows:
         zip = row.text
-        if (userZip == zip):
+        if (str(userZip) == zip):
             return True
     return False

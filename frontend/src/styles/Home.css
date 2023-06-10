@@ -82,6 +82,33 @@
   filter: opacity(80%);
 }
 
+.menuModal .overlay {
+  position: fixed;
+  bottom: 0;
+  top: 80px;
+  width: 100%;
+  height: 100%;
+}
+.menuModal .modal {
+  top: 80px;
+  background: #3E342D;
+  width: 250px;
+  height: 240px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.menuModal .modal .modal-content {
+  margin-top: 10px;
+}
+.menuModal .modal .modal-content p {
+  font-size: 20px;
+  line-height: 40px;
+}
+.menuModal .modal .modal-content p:hover {
+  cursor: pointer;
+  transition: 0.2s;
+  color: gold;
+}
+
 .morningTxt {
   color: #3E342D;
   font-size: 80px;

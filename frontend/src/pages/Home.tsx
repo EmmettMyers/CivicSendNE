@@ -30,9 +30,6 @@ export const HomeLoggedIn: React.FC = () => {
   const [bgSrc, setBgSrc] = useState("");
 
   useEffect(() => {
-    //localStorage.setItem('sessionToken', ''); localStorage.setItem('user', '');
-    // Admin Logout ^
-
     // set name
     setFirstName(getUser().firstName);
     // set greeting and background by current time
@@ -70,7 +67,7 @@ export const HomeLoggedIn: React.FC = () => {
           />
         </div>
         <div className="flex justify-center">
-          <Button onClick={() => setPage('home')} 
+          <Button onClick={() => setPage('sentEmails')} 
                   text="Emails Sent" txtColor={lightBlue} fontSize="25px"
                   bgColor={solidBlue} width="300px" height="100px" 
                   marginTop="30px" borderRadius="10px"  

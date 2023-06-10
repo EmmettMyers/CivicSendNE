@@ -86,7 +86,7 @@ const Register: React.FC = () => {
             return "User location is invalid or not located in Nebraska.";
         }
         return "";
-      }
+    }
 
     return (
         <div className="w-screen h-screen">
@@ -96,13 +96,13 @@ const Register: React.FC = () => {
                 <div className="flex justify-center">
                     <div className="registerBox rounded-xl">
                         <h1 className="font-bold">Create an Account</h1>
-                        <AccountInput onChange={setFirstName} label="First Name" />
-                        <AccountInput onChange={setLastName} label="Last Name" />
-                        <AccountInput onChange={setEmail} label="Email" />
-                        <AccountInput onChange={setPassword} label="Password" />
-                        <AccountInput onChange={setAddress} label="Address" />
-                        <AccountInput onChange={setCity} label="City" />
-                        <AccountInput onChange={setZip} label="ZIP Code" />
+                        <AccountInput disabled={false} value={firstName} onChange={setFirstName} label="First Name" />
+                        <AccountInput disabled={false} value={lastName} onChange={setLastName} label="Last Name" />
+                        <AccountInput disabled={false} value={email} onChange={setEmail} label="Email" />
+                        <AccountInput disabled={false} value={password} onChange={setPassword} label="Password" />
+                        <AccountInput disabled={false} value={address} onChange={setAddress} label="Address" />
+                        <AccountInput disabled={false} value={city} onChange={setCity} label="City" />
+                        <AccountInput disabled={false} value={zip} onChange={setZip} label="ZIP Code" />
                         <label className="residentCheck flex items-center font-medium">
                             <input id="neCheckbox" type="checkbox" className="form-checkbox mr-2" />
                             <span>I am a resident of the state of Nebraska.</span>

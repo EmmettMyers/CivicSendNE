@@ -87,6 +87,36 @@
     }
 }
 
+// Menu Modal
+.menuModal {
+    .overlay {
+        position: fixed;
+        bottom: 0;
+        top: 80px;
+        width: 100%;
+        height: 100%;
+    }
+    .modal {
+        top: 80px;
+        background: $solid-brown;
+        width: 250px;
+        height: 240px;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        .modal-content {
+            margin-top: 10px;
+            p {
+                font-size: 20px;
+                line-height: 40px;
+                &:hover {
+                    cursor: pointer;
+                    transition: .2s;
+                    color: gold;
+                }
+            }
+        }
+    }
+}
+
 // Home Logged In Page
 .morningTxt {
     color: $solid-brown;

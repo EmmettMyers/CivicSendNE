@@ -1,7 +1,7 @@
 @import 'colors';
 
 .inter {
-    font-family: 'Inter';
+    font-family: 'Inter' !important;
 }
 
 // Setup page
@@ -161,13 +161,20 @@
 }
 
 // Downloaded Letters Page 
-.downloadedLetters {
+.savedMail {
+    .spinner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding-bottom: 30px;
+    }
     .title {
         color: $solid-brown;
         font-size: 70px;
         margin-top: 10px;
     }
-    .minimizedLetters {
+    .minimizedMail {
         width: 750px;
         height: 550px;
         background: $lightest-grey;
@@ -175,14 +182,14 @@
         overflow-y: scroll;
         border: 2px solid $solid-brown;
     }
-    .bigLetter {
+    .bigMail {
         width: 850px;
         height: 550px;
         background: $lightest-grey;
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         overflow-y: scroll;
         border: 2px solid $solid-brown;
-        .letterHolder {
+        .mailHolder {
             margin-top: 15px;
             margin-left: 25px;
             font-size: 20px;
@@ -203,7 +210,7 @@
 }
 
 // Letter Minimized
-.letterMin {
+.mailMin {
     height: 70px;
     border-bottom: 2px solid $solid-brown;
     font-size: 20px;

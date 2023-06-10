@@ -11,6 +11,14 @@ def saveEmail(emailInfo):
     insert = col.insert_one(emailInfo)
     return "Email successfully saved!"
 
+def getEmails(email):
+    db = client["CivicSendNE"]
+    col = db["sentEmails"]
+    emails = list(col.find({"sender.email": email}))
+    for email in emails:
+        email["_id"] = str(email["_id"])
+    return emails
+
 def saveLetter(letterInfo):
     db = client["CivicSendNE"]
     col = db["downloadedLetters"]

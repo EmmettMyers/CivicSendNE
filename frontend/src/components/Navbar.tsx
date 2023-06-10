@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import setPage from "../index";
 import { loggedIn } from "../authenticator";
 import LoginModal from "./LoginModal";
+import MenuModal from "./MenuModal";
 
 interface NavbarProps {
     highlight: string;
@@ -9,15 +10,20 @@ interface NavbarProps {
 
 const NavBar: React.FC<NavbarProps> = ({ highlight }) => {
     const [loginModalOpen, setLoginModal] = useState(false);
+    const [menuOpen, setMenu] = useState(false);
     const homeRef = useRef<HTMLParagraphElement>(null);
     const emailRef = useRef<HTMLParagraphElement>(null);
     const letterRef = useRef<HTMLParagraphElement>(null);
 
-    const openModal = ():void => {
+    const openLogin = ():void => {
         setLoginModal(true);
     }
-    const closeModal = ():void => {
+    const closeLogin = ():void => {
         setLoginModal(false);
+    }
+
+    const toggleMenu = ():void => {
+        setMenu(!menuOpen);
     }
 
     useEffect(() => {
@@ -39,15 +45,22 @@ const NavBar: React.FC<NavbarProps> = ({ highlight }) => {
 
     return (
         <div className="navbar w-screen z-10">
-            {loginModalOpen && <LoginModal isOpen={true} onClose={closeModal} />}
+            {loginModalOpen && <LoginModal isOpen={true} onClose={closeLogin} />}
+            {menuOpen && <MenuModal isOpen={true} onClose={toggleMenu} />}
             <img src="./assets/logoWhite.png" onClick={() => setPage('home')} className="logo absolute left-0 top-0" />
             <div className="txt-holder flex absolute right-0 top-0 text-white font-medium">
-                <p ref={homeRef} onClick={() => setPage('home')}>Home</p>
-                <p ref={emailRef} onClick={() => setPage('emailSetup')}>Email</p>
-                <p ref={letterRef} onClick={() => setPage('letterSetup')}>Letter</p>
                 {loggedIn() ? 
-                    <img src="./assets/menuLogo.png" className="menu" /> 
-                    : <p className="text-yellow-400 font-semibold" onClick={openModal}>Log In</p>
+                    <>
+                        <p ref={homeRef} onClick={() => setPage('home')}>Home</p>
+                        <p ref={emailRef} onClick={() => setPage('emailSetup')}>Email</p>
+                        <p ref={letterRef} onClick={() => setPage('letterSetup')}>Letter</p>
+                        <img src="./assets/menuLogo.png" className="menu" onClick={toggleMenu} /> 
+                    </>
+                : 
+                    <>
+                        <p className="font-semibold" onClick={() => setPage('register')}>Sign Up</p>
+                        <p className="font-semibold" onClick={openLogin}>Log In</p>
+                    </>
                 }
             </div>
         </div>

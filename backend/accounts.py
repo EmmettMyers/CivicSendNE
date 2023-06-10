@@ -10,6 +10,15 @@ def accountExists(email):
     account = col.find_one({"email": email})
     return account is not None
 
+def setAccount(userInfo):
+    # Delete old account
+    email = userInfo['email']
+    db = client["CivicSendNE"]
+    col = db["accounts"]
+    delete = col.delete_one({'email': email})
+    # Set new account
+    createAccount(userInfo)
+
 def createAccount(userInfo):
     # Set user district and recipients
     from scraper import findUserDistrict

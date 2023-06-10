@@ -1,5 +1,5 @@
 .inter {
-  font-family: "Inter";
+  font-family: "Inter" !important;
 }
 
 .mailSetup .setupTitle {
@@ -149,12 +149,19 @@
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
-.downloadedLetters .title {
+.savedMail .spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-bottom: 30px;
+}
+.savedMail .title {
   color: #3E342D;
   font-size: 70px;
   margin-top: 10px;
 }
-.downloadedLetters .minimizedLetters {
+.savedMail .minimizedMail {
   width: 750px;
   height: 550px;
   background: #F4F4F4;
@@ -162,7 +169,7 @@
   overflow-y: scroll;
   border: 2px solid #3E342D;
 }
-.downloadedLetters .bigLetter {
+.savedMail .bigMail {
   width: 850px;
   height: 550px;
   background: #F4F4F4;
@@ -170,32 +177,32 @@
   overflow-y: scroll;
   border: 2px solid #3E342D;
 }
-.downloadedLetters .bigLetter .letterHolder {
+.savedMail .bigMail .mailHolder {
   margin-top: 15px;
   margin-left: 25px;
   font-size: 20px;
   font-family: "Times New Roman", Times, serif;
 }
-.downloadedLetters .txtHolder {
+.savedMail .txtHolder {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
 }
-.downloadedLetters .txtHolder i {
+.savedMail .txtHolder i {
   color: #676767;
   font-size: 25px;
   margin-bottom: 40px;
 }
 
-.letterMin {
+.mailMin {
   height: 70px;
   border-bottom: 2px solid #3E342D;
   font-size: 20px;
   padding-top: 5px;
   padding-left: 10px;
 }
-.letterMin:hover {
+.mailMin:hover {
   cursor: pointer;
   transition: 0.2s;
   background: gold !important;

@@ -34,6 +34,12 @@ def createAccountRoute():
     userInfo = request.json
     return jsonify(createAccount(userInfo))
 
+# Set account
+@app.route('/setAccount', methods=['POST'])
+def setAccountRoute():
+    userInfo = request.json
+    return jsonify(setAccount(userInfo))
+
 # Logging in
 @app.route('/login', methods=['POST'])
 def loginRoute():
@@ -63,11 +69,17 @@ def downloadLetterRoute():
     letterHTML = request.json['letterHTML']
     return jsonify(downloadLetter(letterHTML))
 
-# Download letter
+# Get letters downloaded
 @app.route('/getLetters', methods=['POST'])
 def getLettersRoute():
     email = request.json['email']
     return jsonify(getLetters(email))
+
+# Get emails sent
+@app.route('/getEmails', methods=['POST'])
+def getEmailsRoute():
+    email = request.json['email']
+    return jsonify(getEmails(email))
 
 # Running app
 if __name__ == '__main__':

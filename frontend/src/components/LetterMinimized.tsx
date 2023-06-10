@@ -4,9 +4,10 @@ import '../styles/Home.css';
 interface LetterMinimizedProps {
     letterInfo: Letter;
     onClick: () => void;
+    expanded: boolean;
 }
 
-const LetterMinimized: React.FC<LetterMinimizedProps> = ({ letterInfo, onClick }) => {
+const LetterMinimized: React.FC<LetterMinimizedProps> = ({ letterInfo, onClick, expanded }) => {
     const [isClicked, setIsClicked] = useState(false);
 
     const getPosition = (string: string, subString: string, index: number) => {
@@ -26,8 +27,12 @@ const LetterMinimized: React.FC<LetterMinimizedProps> = ({ letterInfo, onClick }
         background: isClicked ? 'gold' : '#cacaca'
     };
 
+    useEffect(() => {
+        setIsClicked(expanded);
+    }, [expanded]);
+
     return (
-        <div className="letterMin w-100" onClick={handleClick} style={clickedStyle}>
+        <div className="mailMin w-100" onClick={handleClick} style={clickedStyle}>
             <strong>To: </strong>{letterInfo.recipients} <br/>
             <i dangerouslySetInnerHTML={{ __html: "<div>" + startingText + "</div>" }} />
         </div>
