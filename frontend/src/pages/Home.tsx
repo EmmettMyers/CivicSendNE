@@ -34,10 +34,10 @@ export const HomeLoggedIn: React.FC = () => {
     setFirstName(getUser().firstName);
     // set greeting and background by current time
     var today = new Date();
-    if (today.getHours() < 12){
+    if (today.getHours() < 12 && today.getHours() > 4){
       setBgSrc("./assets/fields/morning2.jpg");
       setGreeting("Good morning");
-    } else if (today.getHours() < 19){
+    } else if (today.getHours() < 19 && today.getHours() > 4){
       setBgSrc("./assets/fields/afternoon.jpg");
       setGreeting("Good afternoon");
     } else {
@@ -79,7 +79,7 @@ export const HomeLoggedIn: React.FC = () => {
                   marginTop="30px" borderRadius="10px"  
           />
           <div style={{width: "15px"}}></div>
-          <Button onClick={() => setPage('home')} 
+          <Button onClick={() => setPage('yourRepresentatives')} 
                   text="My Representatives" txtColor={lightBlue} fontSize="25px"
                   bgColor={solidBlue} width="300px" height="100px" 
                   marginTop="30px" borderRadius="10px"  

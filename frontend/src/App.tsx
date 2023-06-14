@@ -10,6 +10,7 @@ import MailSetup from "./pages/MailSetup";
 import DownloadedLetters from "./pages/DownloadedLetters";
 import SentEmails from "./pages/SentEmails";
 import YourAccount from "./pages/YourAccount";
+import YourReps from "./pages/YourReps";
 
 interface AppProps {
     page: string;
@@ -22,7 +23,7 @@ const App: React.FC<AppProps> = ({ page }) => {
     if (loggedIn()){
         switch (page) {
             case 'yourRepresentatives':
-                pageComponent = <YourAccount />;
+                pageComponent = <YourReps />;
                 break;
             case 'yourAccount':
                 pageComponent = <YourAccount />;

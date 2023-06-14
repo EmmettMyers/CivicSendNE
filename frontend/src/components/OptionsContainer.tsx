@@ -4,7 +4,11 @@ import { softBrown } from "../styles/colors";
 import Button from "./Button";
 import { setOption } from "../pages/MailSetup";
 
-const OptionsContainer: React.FC = () => {    
+interface OptionsContainerProps {
+    mailType: string;
+}
+
+const OptionsContainer: React.FC<OptionsContainerProps> = ({ mailType }) => {
     const [selectedOption, setSelectedOption] = useState<string>('');
 
     const handleClick = (option: string) => {
@@ -30,7 +34,7 @@ const OptionsContainer: React.FC = () => {
 
     return (
         <div className="optionsContainer rounded-md">
-            <p className="title font-semibold">Select an email option:</p>
+            <p className="title font-semibold">Select an {mailType} option:</p>
             <div className="flex justify-center">
                 <div style={{marginTop: "5px", ...getButtonStyle('blank')}} 
                     onClick={() => handleClick("blank")} 

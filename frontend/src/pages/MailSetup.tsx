@@ -51,7 +51,7 @@ const MailSetup: React.FC<MailSetupProps> = ({ mailType }) => {
             <RecipientsContainer />
             <div style={{width: "20px"}}></div>
             <div>
-                <OptionsContainer />
+                <OptionsContainer mailType={mailType} />
                 <Button onClick={() => setPage(createPage)} 
                         text="Create" txtColor={lightGreen} fontSize="35px" 
                         bgColor={solidGreen} width="500px" height="80px" 

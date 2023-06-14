@@ -47,6 +47,9 @@ body {
         margin-right: 35px;
         @include txt_hover(70%);
     }
+    .startTxt {
+        color: white !important;
+    }
 }
 
 // BgImage Component

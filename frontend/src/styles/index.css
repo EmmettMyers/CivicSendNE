@@ -52,6 +52,9 @@ body {
   cursor: pointer;
   filter: brightness(70%);
 }
+.navbar .startTxt {
+  color: white !important;
+}
 
 .bgImage {
   opacity: 8%;

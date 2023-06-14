@@ -26,8 +26,8 @@ const MenuModal: React.FC<MenuModalProps> = ({ isOpen, onClose }) => {
                 <div className="modal-content text-center font-semibold text-white">
                     <p onClick={() => handleClick('sentEmails')}>Sent Emails</p>
                     <p onClick={() => handleClick('downloadedLetters')}>Downloaded Letters</p>
-                    <p onClick={() => handleClick('yourRepresentatives')}>Your Representatives</p>
-                    <p onClick={() => handleClick('yourAccount')}>Your Account</p>
+                    <p onClick={() => handleClick('yourRepresentatives')}>My Representatives</p>
+                    <p onClick={() => handleClick('yourAccount')}>My Account</p>
                     <p onClick={() => handleClick('logOut')}>Log Out</p>
                 </div>
             </div>

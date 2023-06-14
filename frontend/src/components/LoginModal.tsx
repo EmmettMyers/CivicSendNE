@@ -56,7 +56,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
                         </div>
                         <div className="loginInput flex justify-center mt-4">
                             <label className="font-medium mr-4">Password:</label>
-                            <input onChange={handlePasswordChange} id="password" className="rounded-md" type="text" autoComplete="off"/>
+                            <input onChange={handlePasswordChange} id="password" className="rounded-md" type="password" autoComplete="off"/>
                         </div>
                     </div>
                     <div className="flex justify-between">

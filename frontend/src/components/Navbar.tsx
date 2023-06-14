@@ -48,7 +48,7 @@ const NavBar: React.FC<NavbarProps> = ({ highlight }) => {
             {loginModalOpen && <LoginModal isOpen={true} onClose={closeLogin} />}
             {menuOpen && <MenuModal isOpen={true} onClose={toggleMenu} />}
             <img src="./assets/logoWhite.png" onClick={() => setPage('home')} className="logo absolute left-0 top-0" />
-            <div className="txt-holder flex absolute right-0 top-0 text-white font-medium">
+            <div className="txt-holder flex absolute right-0 top-0 font-medium text-white">
                 {loggedIn() ? 
                     <>
                         <p ref={homeRef} onClick={() => setPage('home')}>Home</p>
@@ -58,8 +58,8 @@ const NavBar: React.FC<NavbarProps> = ({ highlight }) => {
                     </>
                 : 
                     <>
-                        <p className="font-semibold" onClick={() => setPage('register')}>Sign Up</p>
-                        <p className="font-semibold" onClick={openLogin}>Log In</p>
+                        <p className="startTxt font-semibold" onClick={() => setPage('register')}>Sign Up</p>
+                        <p className="startTxt font-semibold" onClick={openLogin}>Log In</p>
                     </>
                 }
             </div>

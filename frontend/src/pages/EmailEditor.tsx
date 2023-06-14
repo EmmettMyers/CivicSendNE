@@ -70,7 +70,7 @@ const EmailEditor: React.FC = () => {
                 body: setBody,
                 senatorEmail: "emmettleemyers@gmail.com" // senator.email
             };
-            emailjs.send(serviceID, templateID, templateParams, userID);
+            //emailjs.send(serviceID, templateID, templateParams, userID);
         }
         // save email
         var saveInfo: Email = {
@@ -79,7 +79,7 @@ const EmailEditor: React.FC = () => {
             subject: subject,
             content: body
         }
-        const response = await axios.post('/saveEmail', saveInfo);
+        //const response = await axios.post('/saveEmail', saveInfo);
     }
 
     useEffect(() => {

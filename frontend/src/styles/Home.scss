@@ -100,7 +100,7 @@
         top: 80px;
         background: $solid-brown;
         width: 250px;
-        height: 240px;
+        height: 230px;
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         .modal-content {
             margin-top: 10px;
@@ -159,5 +159,55 @@
         margin-top: 20px;
         margin-left: 30px;
         width: 250px;
+    }
+}
+
+// Your Reps Page
+.yourReps {
+    .title {
+        color: $solid-brown;
+        font-size: 70px;
+        margin-top: 40px;
+    }
+    .yourRepBox {
+        width: 300px;
+        height: 500px;
+        background: $lightest-grey;
+        margin-top: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        overflow-y: auto;
+        .title {
+            line-height: 35px;
+            font-size: 30px;
+            color: $solid-brown;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .repBox {
+            width: 220px;
+            height: 350px;
+            margin-bottom: 20px;
+            background: $light-grey;
+            overflow: hidden;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+            .topTxt {
+                font-size: 20px;
+                z-index: 10;
+                background: $light-grey;
+                padding: 5px;
+                padding-top: 7px;
+                box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.2);
+            }
+            .bottomTxt {
+                font-size: 18px;
+                line-height: 20px;
+                z-index: 10;
+                background: $light-grey;
+                padding: 10px;
+                box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.2);
+            }
+        }
     }
 }

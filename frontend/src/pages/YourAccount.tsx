@@ -72,15 +72,12 @@ const YourAccount: React.FC = () => {
         return "";
     }
 
-    useEffect(() => {
-    }, []);
-
     return (
         <div className="w-screen h-screen">
             <img src="./assets/backArrow.png" className="exit absolute" onClick={() => setPage('home')} />
             <div className="flex justify-center">
                 <div className="registerBox rounded-xl">
-                    <h1 className="font-bold" style={{marginBottom: "20px"}}>Your Account</h1>
+                    <h1 className="font-bold" style={{marginBottom: "20px"}}>My Account</h1>
                     <AccountInput disabled={!editing} value={firstName} onChange={setFirstName} label="First Name" />
                     <AccountInput disabled={!editing} value={lastName} onChange={setLastName} label="Last Name" />
                     <AccountInput disabled={true} value={email} onChange={setEmail} label="Email" />

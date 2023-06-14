@@ -93,7 +93,7 @@
   top: 80px;
   background: #3E342D;
   width: 250px;
-  height: 240px;
+  height: 230px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 .menuModal .modal .modal-content {
@@ -150,4 +150,51 @@
   margin-top: 20px;
   margin-left: 30px;
   width: 250px;
+}
+
+.yourReps .title {
+  color: #3E342D;
+  font-size: 70px;
+  margin-top: 40px;
+}
+.yourReps .yourRepBox {
+  width: 300px;
+  height: 500px;
+  background: #F4F4F4;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  overflow-y: auto;
+}
+.yourReps .yourRepBox .title {
+  line-height: 35px;
+  font-size: 30px;
+  color: #3E342D;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.yourReps .yourRepBox .repBox {
+  width: 220px;
+  height: 350px;
+  margin-bottom: 20px;
+  background: #B0B0B0;
+  overflow: hidden;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+}
+.yourReps .yourRepBox .repBox .topTxt {
+  font-size: 20px;
+  z-index: 10;
+  background: #B0B0B0;
+  padding: 5px;
+  padding-top: 7px;
+  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.2);
+}
+.yourReps .yourRepBox .repBox .bottomTxt {
+  font-size: 18px;
+  line-height: 20px;
+  z-index: 10;
+  background: #B0B0B0;
+  padding: 10px;
+  box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.2);
 }/*# sourceMappingURL=Home.css.map */
