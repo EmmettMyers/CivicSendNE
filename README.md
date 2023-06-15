@@ -14,7 +14,7 @@
  - the formatting of each email to match the information of each senator sent to
  - the search for who the user's representatives and senators are based on the user's location
 
-<br/><b>And including:</b><br/>
+<b>And including:</b>
  - six email and letter templates
  - an AI writer that generates letters and emails based on a user's prompt
  - sent emails and downloaded letters viewer/storage
