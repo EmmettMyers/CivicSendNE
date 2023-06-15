@@ -66,9 +66,9 @@ const LetterEditor: React.FC = () => {
             }
             // download letter
             var letterHTML = "<div>" + setBody + "</div>";
-            //const response = await axios.post('/downloadLetter', { letterHTML });
-            //const pdfUrl = response.data.document;
-            //window.open(pdfUrl);
+            const response = await axios.post('/downloadLetter', { letterHTML });
+            const pdfUrl = response.data.document;
+            window.open(pdfUrl);
         }
         // save letter
         var saveInfo: Letter = {
