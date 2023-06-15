@@ -24,7 +24,7 @@
 <br/>
 The application retrieves senator and representative information for each
 user by using the user's address and webscraping multiple websites.
-<br/>
+<br>
 
   <b>Tools used:</b>
  - TypeScript - React
