@@ -8,8 +8,8 @@ def generateAIMail(user, prompt):
     line3 = " Do not include a subject. Also, make every new line a double html breakline: <br/><br/>. Here is the topic: " + prompt
     totalPrompt = line1 + line2 + line3
 
-    openai.organization = "org-B2VCzC8yPM5DdOCjJC0byQrm"
-    openai.api_key = "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"
+    openai.organization = {ORG}
+    openai.api_key = {APIKEY}
     openai.Model.list()
     url = "https://api.openai.com/v1/chat/completions"
     headers = {
