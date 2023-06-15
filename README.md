@@ -8,14 +8,23 @@
 
 <a href="https://drive.google.com/uc?export=view&id=15emMJQD9RmRJ7MoTG4NXKMexJQAiMZl2"><img src="https://drive.google.com/uc?export=view&id=15emMJQD9RmRJ7MoTG4NXKMexJQAiMZl2" style="width: 550px; max-width: 100%; height: auto" title="Click to enlarge picture" />
 
-<b>NewsGuesser is a web game in which users have 2 minutes to guess as many words in a news article as possible from seeing only its picture and title.</b><br>
-  
-The longer the word and the more times it appears in the article, the more points you receive.<br>
-Users can play normal mode (pulls random news articles) or topics mode (pulls news articles based on a topic the user selects).
+<b>Web app that streamlines civic communication to local senators and representatives by automating:</b>
+ - the sending of an email to multiple senators at once
+ - the downloading of a letter tailored to multiple different senators
+ - the formatting of each email to match the information of each senator sent to
+ - the search for who the user's representatives and senators are based on the user's location
+<b>And including:</b>
+ - six email and letter templates
+ - an AI writer that generates letters and emails based on a user's prompt
+ - sent emails and downloaded letters viewer/storage
+ - customizable profiles containing a user's name, email, location, etc
+ - a user-friendly, dynamic dashboard that eases navigation of all features
 
-The server pulls news article data from NewsAPI, then the client-side parses the data to use for the game.<br>
+The application retrieves senator and representative information for each user by using the user's address and webscraping multiple websites.<br>
 
   <b>Tools used:</b>
- - JavaScript - React, Node, Express
+ - TypeScript - React
+ - Python - Flask
  - CSS - Tailwind, Sass
- - Axios, Readability
+ - MongoDB - Heroku
+ - OpenAI, Docamatic, EmailJS, BeautifulSoup, Selenium, Axios
