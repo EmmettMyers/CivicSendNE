@@ -9,7 +9,7 @@ from ai_writer import *
 # Initializing flask app
 app = Flask(__name__)
 CORS(app)
-app.secret_key = 'd715c8522d9329ab85c58afdc0fcb4a020eeafd158efe6c1'
+app.secret_key = {KEY}
 
 # Retrieving senator data
 @app.route('/getRecipients', methods=['POST'])
