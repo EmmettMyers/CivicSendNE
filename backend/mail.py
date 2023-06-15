@@ -46,7 +46,7 @@ def downloadLetter(letterHTML):
     }
     headers = {
         "Content-Type": "application/json",
-        "Authorization": "Bearer 3f3Sai58U8WmUuwFTqOXNMlETY08D7jOAud43Wuh"
+        "Authorization": "Bearer {API_KEY}"
     }
     response = requests.post('https://docamatic.com/api/v1/pdf', json=data, headers=headers)
     return response.json()
