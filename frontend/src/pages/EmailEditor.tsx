@@ -9,9 +9,9 @@ import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 import { getUser } from "../authenticator";
 import axios from "axios";
 
-const serviceID = 'service_trk8vgd';
-const templateID = 'template_z9jnier';
-const userID = 'voqiCRXhWPfT8jI7j';
+const serviceID = {SERVICE_ID};
+const templateID = {TEMPLATE_ID};
+const userID = {USER_ID};
 
 const EmailEditor: React.FC = () => {
     const senatorsList = Array.from(selectedSenators.values());
@@ -68,9 +68,9 @@ const EmailEditor: React.FC = () => {
                 name: getUser().firstName + " " + getUser().lastName,
                 subject: subject,
                 body: setBody,
-                senatorEmail: "emmettleemyers@gmail.com" // senator.email
+                senatorEmail: {SENATOR_EMAIL}
             };
-            //emailjs.send(serviceID, templateID, templateParams, userID);
+            emailjs.send(serviceID, templateID, templateParams, userID);
         }
         // save email
         var saveInfo: Email = {
@@ -79,7 +79,7 @@ const EmailEditor: React.FC = () => {
             subject: subject,
             content: body
         }
-        //const response = await axios.post('/saveEmail', saveInfo);
+        const response = await axios.post('/saveEmail', saveInfo);
     }
 
     useEffect(() => {
