@@ -21,10 +21,10 @@
  - customizable profiles containing a user's name, email, location, etc
  - a user-friendly, dynamic dashboard that eases navigation of all features
 
-
+<br/>
 The application retrieves senator and representative information for each
 user by using the user's address and webscraping multiple websites.
-
+<br/>
 
   <b>Tools used:</b>
  - TypeScript - React
