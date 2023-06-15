@@ -37,6 +37,12 @@ interface MailSetupProps {
 const MailSetup: React.FC<MailSetupProps> = ({ mailType }) => {
   const [createPage, setCreatePage] = useState<string>('');
 
+  const handleCreateClick = () => {
+    if (option.content != "" && selectedSenators.size > 0){
+      setPage(createPage);
+    }
+  }
+
   useEffect(() => {
     (mailType === "email") ? setCreatePage("emailEditor") : setCreatePage("letterEditor");
     clearSelectedSenators();
@@ -54,7 +60,7 @@ const MailSetup: React.FC<MailSetupProps> = ({ mailType }) => {
             <div style={{width: "20px"}}></div>
             <div>
                 <OptionsContainer mailType={mailType} />
-                <Button onClick={() => setPage(createPage)} 
+                <Button onClick={() => handleCreateClick()} 
                         text="Create" txtColor={lightGreen} fontSize="35px" 
                         bgColor={solidGreen} width="500px" height="80px" 
                         marginTop="20px" borderRadius="7px"  

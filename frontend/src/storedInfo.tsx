@@ -3,7 +3,8 @@
     INFORMATION THAT IS EITHER HAND-WRITTEN OR COULD NOT BE SCRAPED CORRECTLY IS STORED HERE
 */
 
-import { getUser } from "./authenticator";
+import { getUser, loggedIn } from "./authenticator";
+
 var user = getUser();
 const currentDate = new Date();
 const formattedDate = currentDate.toLocaleDateString('en-US', {
@@ -12,20 +13,25 @@ const formattedDate = currentDate.toLocaleDateString('en-US', {
     day: 'numeric',
 });
 
-// Stored Letter Start
-export const letterStart =
-    user.firstName + " " + user.lastName + "<br>" + 
-    user.address.line1 + "<br>" + 
-    user.address.city + ", " + user.address.state + " " + user.address.zip + "<br>" + 
-    user.email + "<br>" + 
-    formattedDate  + "<br><br>" +
-    "{{firstName}} {{lastName}} &nbsp;" + "<br>" + 
-    "<span class='inter text-blue-700 font-bold'>{{address}}</span>" + "<br>" + 
-    "<span class='inter text-blue-700 font-bold'>{{city}}</span>, NE" +
-    "<span class='inter text-blue-700 font-bold'> {{zip}}</span>" + "<br><br>";
+export var letterStart: string;
+export var emailEnd: string;
 
-// Stored Email End
-export const emailEnd = user.address.city + ", NE" + "<br />" + user.email;
+if (loggedIn()){
+    // Stored Letter Start
+    letterStart =
+        user.firstName + " " + user.lastName + "<br>" + 
+        user.address.line1 + "<br>" + 
+        user.address.city + ", " + user.address.state + " " + user.address.zip + "<br>" + 
+        user.email + "<br>" + 
+        formattedDate  + "<br><br>" +
+        "{{firstName}} {{lastName}} &nbsp;" + "<br>" + 
+        "<span class='inter text-blue-700 font-bold'>{{address}}</span>" + "<br>" + 
+        "<span class='inter text-blue-700 font-bold'>{{city}}</span>, NE" +
+        "<span class='inter text-blue-700 font-bold'> {{zip}}</span>" + "<br><br>";
+
+    // Stored Email End
+    emailEnd = user.address.city + ", NE" + "<br />" + user.email;
+}
 
 // Stored info for Expressing Concerns Template
 export const concernsTemplate = {

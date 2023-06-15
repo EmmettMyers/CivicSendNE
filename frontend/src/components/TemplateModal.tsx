@@ -27,22 +27,22 @@ const TemplateModal: React.FC<TemplateModalProps> = ({ mailType, isOpen, onClose
         }
         switch(name){
             case "Expressing Concerns":
-                setOption(mailType, concernsTemplate.subject, start + concernsTemplate.content + end);
+                setOption("template", concernsTemplate.subject, start + concernsTemplate.content + end);
                 break;
             case "Asking for Support":
-                setOption(mailType, supportTemplate.subject, start + supportTemplate.content + end);
+                setOption("template", supportTemplate.subject, start + supportTemplate.content + end);
                 break;
             case "Requesting Action":
-                setOption(mailType, actionTemplate.subject, start + actionTemplate.content + end);
+                setOption("template", actionTemplate.subject, start + actionTemplate.content + end);
                 break;
             case "Advocating Legislation":
-                setOption(mailType, advocateTemplate.subject, start + advocateTemplate.content + end);
+                setOption("template", advocateTemplate.subject, start + advocateTemplate.content + end);
                 break;
             case "Opposing Legislation":
-                setOption(mailType, opposeTemplate.subject, start + opposeTemplate.content + end);
+                setOption("template", opposeTemplate.subject, start + opposeTemplate.content + end);
                 break;
             case "Appreciation and Feedback":
-                setOption(mailType, appreciationTemplate.subject, start + appreciationTemplate.content + end);
+                setOption("template", appreciationTemplate.subject, start + appreciationTemplate.content + end);
                 break;
         }
         closeModal();

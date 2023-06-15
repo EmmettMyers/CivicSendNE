@@ -19,7 +19,6 @@ interface AppProps {
 const App: React.FC<AppProps> = ({ page }) => {
     let pageComponent;
     let navHighlight = "";
-
     if (loggedIn()){
         switch (page) {
             case 'yourRepresentatives':

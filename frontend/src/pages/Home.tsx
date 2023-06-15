@@ -15,8 +15,8 @@ export const HomeLoggedOut: React.FC = () => {
         <MottoSection />
         {/* two right side images */}
         <div className="screenshots">
-          <img src="./assets/temporary.jpg" />
-          <img src="./assets/temporary.jpg" className="mt-10" />
+          <img src="./assets/civicsend2.png" />
+          <img src="./assets/civicsend3.png" className="mt-12" />
         </div>
       </div>
       <BgImage opacity={.08} src="./assets/neSenate.jpg" />

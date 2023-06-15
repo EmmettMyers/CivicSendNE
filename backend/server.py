@@ -4,6 +4,7 @@ import uuid
 from scraper import *
 from accounts import *
 from mail import *
+from ai_writer import *
 
 # Initializing flask app
 app = Flask(__name__)
@@ -80,6 +81,13 @@ def getLettersRoute():
 def getEmailsRoute():
     email = request.json['email']
     return jsonify(getEmails(email))
+
+# Generate AI mail
+@app.route('/generateAIMail', methods=['POST'])
+def generateAIMailRoute():
+    user = request.json['user']
+    prompt = request.json['text']
+    return jsonify(generateAIMail(user, prompt))
 
 # Running app
 if __name__ == '__main__':

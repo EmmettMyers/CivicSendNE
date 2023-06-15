@@ -160,7 +160,7 @@
     }
 }
 
-// Downloaded Letters Page 
+// Saved Mail Page 
 .savedMail {
     .spinner {
         display: flex;
@@ -282,6 +282,16 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    .spinnerAlert {
+        position: absolute;
+        font-size: 40px;
+        top: 100px;
+    }
+    .spinner {
+        display: flex;
+        justify-content: center;
+        margin-top: 260px;
+    }
     .overlay {
         position: fixed;
         bottom: 0;
@@ -293,21 +303,47 @@
     .modal {
         background: $lightest-grey;
         width: 700px;
-        height: 560px;
+        height: 570px;
         padding-left: 20px;
         padding-right: 20px;
+        color: $solid-brown;
         .title {
-            color: $solid-brown;
             font-size: 50px;
+            padding: 15px;
         }
         .close {
-            color: $solid-brown;
             font-size: 35px;
             &:hover {
                 transition: 0.2s;
                 cursor: pointer;
                 filter: opacity(80%);
             }
+        }
+        .description {
+            font-size: 20px;
+            padding-left: 15px;
+        }
+        .reminder {
+            color: $solid-blue;
+            font-size: 14px;
+            padding-left: 15px;
+        }
+        .exampleTitle {
+            font-size: 20px;
+            padding-left: 15px;
+        }
+        .example {
+            font-size: 20px;
+            padding-left: 15px;
+        }
+        textarea {
+            background: #BDBDBD;
+            padding: 8px;
+            padding-left: 10px;
+            width: 630px;
+            height: 120px;
+            resize: none;
+            font-size: 20px;
         }
     }
 }

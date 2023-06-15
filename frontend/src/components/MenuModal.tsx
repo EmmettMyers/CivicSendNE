@@ -19,6 +19,13 @@ const MenuModal: React.FC<MenuModalProps> = ({ isOpen, onClose }) => {
         setPage(page);
     }
 
+    const logOut = () => {
+        localStorage.setItem('sessionToken', "");
+        localStorage.setItem('user', "");
+        closeModal();
+        setPage('home');
+    }
+
     return (
         <div className="menuModal">
             <div className="overlay z-10" onClick={closeModal} />
@@ -28,7 +35,7 @@ const MenuModal: React.FC<MenuModalProps> = ({ isOpen, onClose }) => {
                     <p onClick={() => handleClick('downloadedLetters')}>Downloaded Letters</p>
                     <p onClick={() => handleClick('yourRepresentatives')}>My Representatives</p>
                     <p onClick={() => handleClick('yourAccount')}>My Account</p>
-                    <p onClick={() => handleClick('logOut')}>Log Out</p>
+                    <p onClick={() => logOut()}>Log Out</p>
                 </div>
             </div>
         </div>
