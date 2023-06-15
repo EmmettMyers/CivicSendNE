@@ -82,25 +82,7 @@ const LetterEditor: React.FC = () => {
     }
 
     useEffect(() => {
-        const currentDate = new Date();
-        const formattedDate = currentDate.toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-        });
-        var user = getUser();
-        setBody(highlightPlaceholders(
-            user.firstName + " " + user.lastName + "<br>" + 
-            user.address.line1 + "<br>" + 
-            user.address.city + ", " + user.address.state + " " + user.address.zip + "<br>" + 
-            user.email + "<br>" + 
-            formattedDate  + "<br><br>" +
-            "{{firstName}} {{lastName}} &nbsp;" + "<br>" + 
-            "<span class='inter text-blue-700 font-bold'>{{address}}</span>" + "<br>" + 
-            "<span class='inter text-blue-700 font-bold'>{{city}}</span>, NE" +
-            "<span class='inter text-blue-700 font-bold'> {{zip}}</span>" + "<br><br>" + 
-            "Dear {{firstName}} {{lastName}},&nbsp;"
-        ));
+        setBody(highlightPlaceholders(option.content));
     }, []);
 
     return (

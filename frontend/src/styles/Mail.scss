@@ -222,3 +222,92 @@
         background: gold !important;
     }
 }
+
+// Template Modal
+.templateModal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    .overlay {
+        position: fixed;
+        bottom: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+    }      
+    .modal {
+        background: $lightest-grey;
+        width: 700px;
+        height: 560px;
+        padding-left: 20px;
+        padding-right: 20px;
+        .title {
+            color: $solid-brown;
+            font-size: 45px;
+        }
+        .close {
+            color: $solid-brown;
+            font-size: 35px;
+            &:hover {
+                transition: 0.2s;
+                cursor: pointer;
+                filter: opacity(80%);
+            }
+        }
+        .templateBox {
+            width: 200px;
+            height: 200px;
+            background: $light-grey;
+            margin-top: 15px;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+            p {
+                color: $solid-brown;
+                font-size: 22px;
+                padding: 10px;
+            }
+            &:hover {
+                transition: 0.2s;
+                cursor: pointer;
+                filter: brightness(80%);
+            }
+        }
+    }
+}
+
+// AI Modal
+.aiModal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    .overlay {
+        position: fixed;
+        bottom: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+    }      
+    .modal {
+        background: $lightest-grey;
+        width: 700px;
+        height: 560px;
+        padding-left: 20px;
+        padding-right: 20px;
+        .title {
+            color: $solid-brown;
+            font-size: 50px;
+        }
+        .close {
+            color: $solid-brown;
+            font-size: 35px;
+            &:hover {
+                transition: 0.2s;
+                cursor: pointer;
+                filter: opacity(80%);
+            }
+        }
+    }
+}

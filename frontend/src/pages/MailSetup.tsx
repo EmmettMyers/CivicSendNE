@@ -19,12 +19,14 @@ export const clearSelectedSenators = () => {
 }
 
 // Option storage
-export const option: { type: string, content: string } = {
+export const option: { type: string, subject: string, content: string } = {
   type: "",
+  subject: "",
   content: ""
 };
-export const setOption = (type: string, content: string) => {
+export const setOption = (type: string, subject: string, content: string) => {
   option.type = type;
+  option.subject = subject;
   option.content = content;
 }
 
@@ -38,7 +40,7 @@ const MailSetup: React.FC<MailSetupProps> = ({ mailType }) => {
   useEffect(() => {
     (mailType === "email") ? setCreatePage("emailEditor") : setCreatePage("letterEditor");
     clearSelectedSenators();
-    setOption("", "");
+    setOption("", "", "");
   }, []);
 
   return (

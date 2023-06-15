@@ -3,6 +3,10 @@ import '../styles/Mail.css';
 import { softBrown } from "../styles/colors";
 import Button from "./Button";
 import { setOption } from "../pages/MailSetup";
+import TemplateModal from "./TemplateModal";
+import AIModal from "./AIModal";
+import { getUser } from "../authenticator";
+import { letterStart } from "../storedInfo";
 
 interface OptionsContainerProps {
     mailType: string;
@@ -10,16 +14,49 @@ interface OptionsContainerProps {
 
 const OptionsContainer: React.FC<OptionsContainerProps> = ({ mailType }) => {
     const [selectedOption, setSelectedOption] = useState<string>('');
+    const [modalOpen, setModalOpen] = useState<string>('');
+
+    const closeModal = ():void => {
+        setModalOpen('');
+    }
 
     const handleClick = (option: string) => {
         setSelectedOption(prevSelectedOption => {
             if (prevSelectedOption === option) {
                 return '';
             } else {
-                setOption(option, "");
                 return option;
             }
         });
+        if (selectedOption == ''){
+            switch (option){
+                case "blank":
+                    var user = getUser();
+                    if (mailType == "email"){
+                        setOption(option, "", 
+                            "Dear {{firstName}} {{lastName}},<br/><br/><br/><br/>" +
+                            "Sincerely, <br />" + 
+                            user.firstName + " " + user.lastName + "<br/>" +
+                            user.address.city + ", NE" + "<br/>" +
+                            user.email
+                        );
+                    } else {
+                        setOption(option, "",
+                            letterStart + 
+                            "Dear {{firstName}} {{lastName}},&nbsp;<br/><br/><br/><br/>" +
+                            "Sincerely,<br/>" + 
+                            user.firstName + " " + user.lastName
+                        );
+                    }
+                    break;
+                case "template":
+                    setModalOpen('template');
+                    break;
+                case "ai":
+                    setModalOpen('ai');
+                    break;
+            }
+        }
     };
     const isOptionSelected = (option: string) => {
         return selectedOption === option;
@@ -34,6 +71,8 @@ const OptionsContainer: React.FC<OptionsContainerProps> = ({ mailType }) => {
 
     return (
         <div className="optionsContainer rounded-md">
+            {modalOpen == "template" && <TemplateModal mailType={mailType} isOpen={true} onClose={closeModal}  />}
+            {modalOpen == "ai" && <AIModal mailType={mailType} isOpen={true} onClose={closeModal}  />}
             <p className="title font-semibold">Select an {mailType} option:</p>
             <div className="flex justify-center">
                 <div style={{marginTop: "5px", ...getButtonStyle('blank')}} 

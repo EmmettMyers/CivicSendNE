@@ -83,7 +83,8 @@ const EmailEditor: React.FC = () => {
     }
 
     useEffect(() => {
-        setBody(highlightPlaceholders("Dear {{firstName}} {{lastName}},&nbsp;"));
+        setSubject(highlightPlaceholders(option.subject));
+        setBody(highlightPlaceholders(option.content));
     }, []);
 
     return (
@@ -95,8 +96,8 @@ const EmailEditor: React.FC = () => {
             <div className="inputHolder flex justify-center">
                 <label className="font-bold text-right">To:</label>
                 <input value={concatenatedNames} className="rounded-md" type="text" readOnly />
-                <label className="ml-5 font-bold text-right">Subject:</label>
-                <input onChange={handleSubjectChange} className="rounded-md" type="text" autoComplete="off" />
+                <label className="ml-5 font-bold text-right">Subject: </label>
+                <input onChange={handleSubjectChange} value={subject} className="rounded-md" type="text" autoComplete="off" />
             </div>
             <div className="mt-3 flex justify-center">
                 <ContentEditable
