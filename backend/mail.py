@@ -2,7 +2,7 @@ import requests
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
-uri = "mongodb+srv://emmettmyers:dbCS8045@cluster0.bnt1l57.mongodb.net/?retryWrites=true&w=majority"
+uri = {URI}
 client = MongoClient(uri, server_api=ServerApi('1'))
 
 def saveEmail(emailInfo):
