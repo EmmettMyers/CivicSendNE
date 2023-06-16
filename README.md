@@ -27,5 +27,5 @@ The application retrieves senator and representative information for each<br/>us
  - TypeScript - React
  - Python - Flask
  - CSS - Tailwind, Sass
- - MongoDB - Heroku
+ - MongoDB, Heroku
  - OpenAI, Docamatic, EmailJS, BeautifulSoup, Selenium, Axios
