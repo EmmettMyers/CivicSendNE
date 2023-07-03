@@ -26,6 +26,6 @@ The application retrieves senator and representative information for each<br/>us
   <b>Tools used:</b>
  - TypeScript - React
  - Python - Flask
- - CSS - Tailwind, Sass
+ - HTML/CSS - Tailwind, Sass
  - MongoDB, Heroku
  - OpenAI, Docamatic, EmailJS, BeautifulSoup, Selenium, Axios
