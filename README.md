@@ -2,11 +2,9 @@
 
 <i>Created: Summer 2023 (Incoming College Sophomore)</i>
 
-<a href="https://drive.google.com/uc?export=view&id=14dVYj1fZlGDDkaf6GBEp_ArYoO-4zadp"><img src="https://drive.google.com/uc?export=view&id=14dVYj1fZlGDDkaf6GBEp_ArYoO-4zadp" style="width: 550px; max-width: 100%; height: auto" title="Click to enlarge picture" />
- 
-<a href="https://drive.google.com/uc?export=view&id=1A-ymk6u86sOoUYP5X1QmlPvXvRkWLeii"><img src="https://drive.google.com/uc?export=view&id=1A-ymk6u86sOoUYP5X1QmlPvXvRkWLeii" style="width: 550px; max-width: 100%; height: auto" title="Click to enlarge picture" />
-
-<a href="https://drive.google.com/uc?export=view&id=15emMJQD9RmRJ7MoTG4NXKMexJQAiMZl2"><img src="https://drive.google.com/uc?export=view&id=15emMJQD9RmRJ7MoTG4NXKMexJQAiMZl2" style="width: 550px; max-width: 100%; height: auto" title="Click to enlarge picture" />
+<img src="frontend/public/assets/civicsend 1.png" style="width: 500px" />
+<img src="frontend/public/assets/civicsend 2.png" style="width: 500px" />
+<img src="frontend/public/assets/civicsend 3.png" style="width: 500px" />
 
 <b>Web app that streamlines civic communication to local senators and representatives by automating:</b>
  - the sending of an email to multiple senators at once
