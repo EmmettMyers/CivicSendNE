@@ -1,6 +1,6 @@
 # CivicSendNE
 
-<i>Created: Summer 2023 (Incoming College Sophomore)</i>
+[Live Demo](https://drive.google.com/file/d/1CuL6cXabCZVm2w33mt-Y4uQjUmN8oNns/view)&nbsp;&nbsp;|&nbsp;&nbsp;<i>Created: Summer 2023 (Incoming College Sophomore)</i>
 
 <img src="frontend/public/assets/civicsend 1.png" style="width: 600px" />
 <img src="frontend/public/assets/civicsend 2.png" style="width: 600px" />
