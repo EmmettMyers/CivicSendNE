@@ -2,9 +2,9 @@
 
 <i>Created: Summer 2023 (Incoming College Sophomore)</i>
 
-<img src="frontend/public/assets/civicsend 1.png" style="width: 500px" />
-<img src="frontend/public/assets/civicsend 2.png" style="width: 500px" />
-<img src="frontend/public/assets/civicsend 3.png" style="width: 500px" />
+<img src="frontend/public/assets/civicsend 1.png" style="width: 600px" />
+<img src="frontend/public/assets/civicsend 2.png" style="width: 600px" />
+<img src="frontend/public/assets/civicsend 3.png" style="width: 600px" />
 
 <b>Web app that streamlines civic communication to local senators and representatives by automating:</b>
  - the sending of an email to multiple senators at once
