@@ -16,7 +16,7 @@
  - six email and letter templates
  - an AI writer that generates letters and emails based on a user's prompt
  - sent emails and downloaded letters viewer/storage
- - customizable profiles containing a user's name, email, location, etc
+ - customizable profiles containing a user's name, email, location, etc 
  - a user-friendly, dynamic dashboard that eases navigation of all features
 
 The application retrieves senator and representative information for each<br/>user by using the user's address and webscraping multiple websites.
